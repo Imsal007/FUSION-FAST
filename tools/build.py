@@ -2,7 +2,7 @@
 """Builds the static Fusion Fast site from shared partials.
 Run:  python3 tools/build.py
 Edit SITE below once the real domain is live."""
-import json, os, datetime
+import json, os, datetime, hashlib, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://imsal007.github.io/FUSION-FAST"  # demo host. Change to the real domain at launch
@@ -216,6 +216,14 @@ def scripts(*page):
 def page(file, title, desc, active, body, js=(), ld=None, preload=None):
     html = head(title, desc, "" if file == "index.html" else file, ld, preload) + "<body>\n" + nav(active) + '<main id="main">\n' + body + ("" if file in ("order.html", "404.html") else allergy(True)) + "\n</main>\n" + FOOT + "\n" + mbar(active) + "\n" + DRAWER + "\n" + scripts(*js) + "\n</body>\n</html>\n"
     assert "\u2014" not in html and "\u2013" not in html, f"em dash found in {file}"
+    def _v(m):
+        path = m.group(2)
+        try:
+            h = hashlib.md5(open(os.path.join(ROOT, path), "rb").read()).hexdigest()[:8]
+        except OSError:
+            return m.group(0)
+        return f'{m.group(1)}{path}?v={h}"'
+    html = re.sub(r'((?:href|src)=")(assets/(?:css|js|vendor)/[^"?]+)"', _v, html)
     with open(os.path.join(ROOT, file), "w") as f:
         f.write(html)
     print("built", file, len(html) // 1024, "KB")
@@ -691,3 +699,5 @@ with open(os.path.join(ROOT, "llms.txt"), "w") as f:
 ## FAQ
 """ + "\n".join(f"**{q}** {a}" for q, a in FAQS) + "\n\n## Menu\n" + menu_txt + "\n")
 print("seo files written")
+
+# ASSET_V: css/js links carry a content hash so browsers refetch after every update
