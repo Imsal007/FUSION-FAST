@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.fusionfast.co.uk/sitemap.xml
+Sitemap: https://imsal007.github.io/FUSION-FAST/sitemap.xml

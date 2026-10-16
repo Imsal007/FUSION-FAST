@@ -4,17 +4,17 @@
 
 - Address: 284 Brixton Road, London SW9 6AG, United Kingdom
 - Phone: 020 8075 1647
-- Order for collection: https://www.fusionfast.co.uk/order.html (sent by WhatsApp, pay on collection)
+- Order for collection: https://imsal007.github.io/FUSION-FAST/order.html (sent by WhatsApp, pay on collection)
 - Delivery: Uber Eats (https://www.ubereats.com/gb/store/fusion-fast/DCAekJylQ6O1MS98WWAFcQ) and Just Eat (https://www.just-eat.co.uk/restaurants-fusion--fast-lebanese-grill-nine-elms-/menu)
 - Google rating: 4.9 from 27 reviews (October 2026)
 - Areas nearby: Brixton, Stockwell, Kennington, Camberwell, Oval, Clapham
 
 ## Pages
-- [Home](https://www.fusionfast.co.uk/): what we cook and why
-- [Menu](https://www.fusionfast.co.uk/menu.html): full menu with prices
-- [Order](https://www.fusionfast.co.uk/order.html): order direct for collection
-- [Our Story](https://www.fusionfast.co.uk/story.html): how a plate comes together
-- [Find Us](https://www.fusionfast.co.uk/visit.html): address, hours and directions
+- [Home](https://imsal007.github.io/FUSION-FAST/): what we cook and why
+- [Menu](https://imsal007.github.io/FUSION-FAST/menu.html): full menu with prices
+- [Order](https://imsal007.github.io/FUSION-FAST/order.html): order direct for collection
+- [Our Story](https://imsal007.github.io/FUSION-FAST/story.html): how a plate comes together
+- [Find Us](https://imsal007.github.io/FUSION-FAST/visit.html): address, hours and directions
 
 ## FAQ
 **Is Fusion Fast halal?** Yes, our food is halal. If you have a question about a particular dish, just ask us when you order and we will talk you through it.

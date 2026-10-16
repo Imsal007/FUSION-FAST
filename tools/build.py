@@ -5,7 +5,7 @@ Edit SITE below once the real domain is live."""
 import json, os, datetime
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SITE = "https://www.fusionfast.co.uk"  # TODO: replace with the live domain
+SITE = "https://imsal007.github.io/FUSION-FAST"  # demo host. Change to the real domain at launch
 TODAY = datetime.date.today().isoformat()
 PHONE = "020 8075 1647"
 PHONE_HREF = "tel:+442080751647"
