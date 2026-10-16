@@ -350,3 +350,10 @@ html:not(.js) .stage,.reduce .stage{position:relative;height:100vh}
 @media (max-width:560px){.al-cta .btn{width:100%}.al-icon{flex-basis:40px;height:40px;font-size:24px}}
 .al-addr{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:999px;color:var(--cream);font-weight:700;font-size:15px;text-decoration:underline;text-underline-offset:4px}
 .al-addr svg{width:20px;height:20px;color:var(--ember)}
+.item-ph{grid-column:1/-1;overflow:hidden;border-radius:14px}
+.item-ph img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;border-radius:14px;margin-top:6px}
+@media (hover:none),(pointer:coarse){
+  .item[data-img]{cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .item[data-img] h3 .cam{color:var(--glow)}
+  .item.open h3{color:var(--glow)}
+}

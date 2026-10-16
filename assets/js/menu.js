@@ -112,3 +112,40 @@
       onUpdate: (s) => set(Math.min(1, Math.max(0, (s.progress - 0.08) / 0.78))) });
   });
 })();
+
+/* Touch devices: tap a dish with a photo to slide the photo open under it */
+(function () {
+  if (matchMedia("(hover:hover) and (pointer:fine)").matches) return;
+  const root = document.querySelector("[data-menu]"); if (!root) return;
+  const reduce = window.FF.reduce || !window.gsap;
+  root.querySelectorAll(".item[data-img]").forEach((it) => {
+    it.setAttribute("role", "button"); it.setAttribute("tabindex", "0"); it.setAttribute("aria-expanded", "false");
+    const h = it.querySelector("h3"); if (h) it.setAttribute("aria-label", "Show photo of " + h.textContent.trim());
+  });
+  function toggle(it) {
+    let ph = it.querySelector(".item-ph");
+    const open = !it.classList.contains("open");
+    root.querySelectorAll(".item.open").forEach((o) => { if (o !== it) close(o); });
+    if (!open) return close(it);
+    if (!ph) {
+      const src = it.dataset.img;
+      ph = document.createElement("div"); ph.className = "item-ph";
+      const img = new Image(); img.alt = (it.querySelector("h3") || {}).textContent || ""; img.decoding = "async";
+      img.src = `assets/img/${src}${src.startsWith("tt-") ? "" : "-m"}.webp`;
+      ph.appendChild(img); it.appendChild(ph);
+    }
+    it.classList.add("open"); it.setAttribute("aria-expanded", "true");
+    if (!reduce) gsap.fromTo(ph, { height: 0, opacity: 0 }, { height: "auto", opacity: 1, duration: 0.6, ease: "expo.out", onComplete: () => window.ScrollTrigger && ScrollTrigger.refresh() });
+  }
+  function close(it) {
+    const ph = it.querySelector(".item-ph"); it.classList.remove("open"); it.setAttribute("aria-expanded", "false");
+    if (ph && !reduce) gsap.to(ph, { height: 0, opacity: 0, duration: 0.4, ease: "power2.inOut", onComplete: () => window.ScrollTrigger && ScrollTrigger.refresh() });
+  }
+  root.addEventListener("click", (e) => {
+    if (e.target.closest(".add")) return;
+    const it = e.target.closest(".item[data-img]"); if (it) toggle(it);
+  });
+  root.addEventListener("keydown", (e) => {
+    if ((e.key === "Enter" || e.key === " ") && e.target.matches(".item[data-img]")) { e.preventDefault(); toggle(e.target); }
+  });
+})();
