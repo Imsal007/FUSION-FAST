@@ -102,7 +102,7 @@
       add.classList.add("added"); setTimeout(() => add.classList.remove("added"), 900);
     }
   });
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape") { FF.closeBasket(); doc.classList.remove("menu-open"); } });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") { FF.closeBasket(); if (doc.classList.contains("menu-open")) { doc.classList.remove("menu-open"); if (FF.lenis) FF.lenis.start(); } } });
 
   /* =====================================================
      NAV
@@ -112,13 +112,15 @@
   function onScroll(y) {
     if (!nav) return;
     nav.classList.toggle("scrolled", y > 40);
-    nav.classList.toggle("hide", y > lastY && y > 400 && !doc.classList.contains("menu-open"));
+    nav.classList.toggle("hide", innerWidth > 980 && y > lastY && y > 400 && !doc.classList.contains("menu-open"));
     lastY = y;
   }
   const burger = document.querySelector(".burger");
   if (burger) burger.addEventListener("click", () => {
     const open = doc.classList.toggle("menu-open");
     burger.setAttribute("aria-expanded", open);
+    if (FF.lenis) open ? FF.lenis.stop() : FF.lenis.start();
+    if (nav) nav.classList.remove("hide");
   });
 
   /* =====================================================
