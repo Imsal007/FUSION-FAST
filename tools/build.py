@@ -134,6 +134,24 @@ def mbar(active):
 <a class="wa-float" href="{WA}" {EXT} aria-label="Chat with Fusion Fast on WhatsApp">{ICONS['wa']}<span>WhatsApp us</span></a>"""
 
 
+ALLERGENS = ["Celery", "Cereals with gluten", "Crustaceans", "Eggs", "Fish", "Lupin", "Milk", "Molluscs", "Mustard", "Tree nuts", "Peanuts", "Sesame", "Soya", "Sulphites"]
+
+
+def allergy(compact=False):
+    chips = "".join(f'<li>{a}</li>' for a in ALLERGENS)
+    return f"""<section class="allergy{' compact' if compact else ''}" aria-labelledby="al-h{'-c' if compact else ''}">
+  <div class="wrap"><div class="al-box">
+    <div class="al-head">
+      <span class="al-icon" aria-hidden="true">!</span>
+      <div><h2 id="al-h{'-c' if compact else ''}">Allergies? Speak to our staff before you order.</h2>
+      <p>Our kitchen handles all 14 major allergens, so we can't promise any dish is completely free of them. Tell us about any allergy or intolerance before you order and we'll talk you through what's safe.</p></div>
+    </div>
+    <ul class="al-list" aria-label="The 14 major allergens">{chips}</ul>
+    <div class="al-cta"><a class="btn btn-fire btn-sm" href="{PHONE_HREF}">Call {PHONE}</a><a class="btn btn-ghost btn-sm" href="{WA}" {EXT}>Ask on WhatsApp</a><a class="al-addr" href="{MAPS}" {EXT}>{ICONS['pin']}<span>284 Brixton Road, London SW9 6AG</span></a></div>
+  </div></div>
+</section>"""
+
+
 DRAWER = """<div class="drawer-scrim" data-close-basket></div>
 <aside class="drawer" aria-label="Your order">
   <div class="drawer-head"><h2 class="display">Your order</h2><button class="x-btn" data-close-basket aria-label="Close your order">×</button></div>
@@ -163,7 +181,7 @@ FOOT = f"""<footer class="foot">
     <div class="foot-grid">
       <div>
         <h4>Visit</h4>
-        <p style="margin:0;color:var(--smoke)">284 Brixton Road<br>London SW9 6AG</p>
+        <p style="margin:0"><a href="{MAPS}" {EXT}>284 Brixton Road<br>London SW9 6AG</a></p>
         <p style="margin:12px 0 0"><a href="{PHONE_HREF}">{PHONE}</a></p>
         <p style="margin:6px 0 0"><a href="{WA}" {EXT}>Message us on WhatsApp</a></p>
         <p style="margin:6px 0 0;color:var(--smoke)">Open daily from 2pm until late</p>
@@ -196,7 +214,7 @@ def scripts(*page):
 
 
 def page(file, title, desc, active, body, js=(), ld=None, preload=None):
-    html = head(title, desc, "" if file == "index.html" else file, ld, preload) + "<body>\n" + nav(active) + '<main id="main">\n' + body + "\n</main>\n" + FOOT + "\n" + mbar(active) + "\n" + DRAWER + "\n" + scripts(*js) + "\n</body>\n</html>\n"
+    html = head(title, desc, "" if file == "index.html" else file, ld, preload) + "<body>\n" + nav(active) + '<main id="main">\n' + body + ("" if file in ("order.html", "404.html") else allergy(True)) + "\n</main>\n" + FOOT + "\n" + mbar(active) + "\n" + DRAWER + "\n" + scripts(*js) + "\n</body>\n</html>\n"
     assert "\u2014" not in html and "\u2013" not in html, f"em dash found in {file}"
     with open(os.path.join(ROOT, file), "w") as f:
         f.write(html)
@@ -476,7 +494,7 @@ MENU = f"""
     <ul class="cat-rail" aria-label="Menu sections"></ul>
     <div data-menu><noscript>{noscript_menu}</noscript></div>
   </div>
-  <p class="menu-note">Allergy info: our food can contain milk, gluten, nuts, peanuts, sesame, mustard, soya, eggs, celery, fish and sulphites. Please tell us about any allergy when you order and we will help you choose. Prices match our current delivery menu and may change.</p>
+  <p class="menu-note">Prices match our current delivery menu and may change.</p>
 </section>
 {cta('Got your<br><span class="red">order?</span>', 'Head to checkout, pick a collection time and send it over. We will have it ready when you arrive.')}
 """
@@ -496,6 +514,7 @@ ORDER = f"""
     <p class="lead" data-reveal>Build your meal, check your order and send it to us on WhatsApp. We'll confirm it and have it hot and ready when you walk in. You pay in the shop.</p>
   </div>
 </section>
+{allergy()}
 <section class="wrap" style="padding-bottom:clamp(80px,10vw,140px)" aria-label="Build your order">
   <div class="order-grid">
     <div class="builder">
@@ -517,6 +536,7 @@ ORDER = f"""
           <div class="field"><label for="co-time">Collection time</label><select id="co-time" name="time"></select></div>
         </div>
         <div class="field"><label for="co-notes">Anything we should know?</label><textarea id="co-notes" name="notes" maxlength="200" placeholder="Allergies, extra sauce, no onions..."></textarea></div>
+        <p class="co-al"><b>Allergy?</b> Please call us on {PHONE} before you send your order.</p>
         <button class="btn btn-fire co-btn" type="submit">Send order on WhatsApp <span class="arr">→</span></button>
         <p class="co-alt"><span>Prefer to talk?</span><a href="{PHONE_HREF}">Call {PHONE}</a></p>
         <p class="co-alt" style="margin-top:6px"><span>Want it delivered?</span><a href="{UBER}" {EXT}>Uber Eats</a><a href="{JUSTEAT}" {EXT}>Just Eat</a></p>

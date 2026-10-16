@@ -333,3 +333,20 @@ html:not(.js) .stage,.reduce .stage{position:relative;height:100vh}
 .picker>*{min-width:0}
 @media (max-width:980px){.picker-view{width:100%;min-height:0;aspect-ratio:4/3}}
 .map:has(.map-load) .pin{display:none}
+
+/* ---------------- allergens ---------------- */
+.allergy{padding:clamp(40px,6vw,80px) 0}
+.al-box{border:2px solid var(--glow);border-radius:24px;padding:clamp(22px,3vw,40px);background:linear-gradient(135deg,rgba(255,179,71,.12),rgba(227,38,28,.06) 60%,transparent);display:grid;gap:22px}
+.al-head{display:flex;gap:18px;align-items:flex-start}
+.al-icon{flex:0 0 52px;height:52px;border-radius:50%;background:var(--glow);color:var(--coal);display:grid;place-items:center;font-family:var(--f-display);font-weight:900;font-size:32px}
+.al-head h2{margin:0 0 8px;font-family:var(--f-display);font-weight:900;text-transform:uppercase;font-size:clamp(28px,3.4vw,48px);line-height:.95;color:var(--cream)}
+.al-head p{margin:0;color:var(--cream);opacity:.85;max-width:70ch}
+.al-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.al-list li{padding:8px 14px;border-radius:999px;border:1px solid rgba(255,179,71,.45);background:rgba(11,9,8,.5);font-weight:700;font-size:14px;color:var(--cream)}
+.al-cta{display:flex;gap:10px;flex-wrap:wrap}
+.allergy.compact .al-head h2{font-size:clamp(24px,2.6vw,36px)}
+.co-al{margin:4px 0 12px;padding:12px 14px;border-radius:12px;background:rgba(255,179,71,.12);border:1px solid rgba(255,179,71,.4);font-size:14px;color:var(--cream)}
+.co-al b{color:var(--glow)}
+@media (max-width:560px){.al-cta .btn{width:100%}.al-icon{flex-basis:40px;height:40px;font-size:24px}}
+.al-addr{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:999px;color:var(--cream);font-weight:700;font-size:15px;text-decoration:underline;text-underline-offset:4px}
+.al-addr svg{width:20px;height:20px;color:var(--ember)}
