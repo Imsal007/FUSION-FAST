@@ -241,3 +241,10 @@ section{position:relative}
   .js [data-reveal]{opacity:1;transform:none;clip-path:none}
   body::after{animation:none}
 }
+.mbar{grid-template-columns:repeat(5,1fr)}
+.mbar a.wa{color:#25d366}
+.wa-float{position:fixed;right:24px;bottom:24px;z-index:58;display:flex;align-items:center;gap:10px;height:56px;padding:0 20px 0 16px;border-radius:999px;background:#25d366;color:#08240f;font-family:var(--f-display);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:16px;box-shadow:0 14px 40px -10px rgba(37,211,102,.6);transition:transform .5s var(--ease)}
+.wa-float svg{width:26px;height:26px}
+.wa-float:hover{transform:translateY(-4px)}
+@media (max-width:980px){.wa-float{display:none}}
+.basket-open .wa-float{opacity:0;pointer-events:none}
