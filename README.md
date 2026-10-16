@@ -2,7 +2,6 @@
 
 A concept site built by SAL Digital for Fusion Fast, the halal Lebanese grill at 284 Brixton Road, London SW9 6AG.
 
-Static HTML, CSS and JS. No build step is needed to host it, and there are no monthly running costs.
 
 ## Pages
 - `index.html`: home, with the scroll-driven doner story (The Fire, The Doner, The Burst, The Box)
