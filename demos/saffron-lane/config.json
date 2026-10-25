@@ -211,5 +211,31 @@
       "weight": 700,
       "file": "outfit-latin-700-normal.woff2"
     }
-  ]
+  ],
+  "breakdown": {
+    "title": "What goes in",
+    "mode": "stack",
+    "item": "biryani",
+    "outro": "Sealed, slow cooked, served fresh.",
+    "pieces": [
+      [
+        0,
+        0.34,
+        "Saffron rice, layered and sealed"
+      ],
+      [
+        0.34,
+        1,
+        "Chicken marinated in yoghurt and spice"
+      ]
+    ],
+    "floaters": [
+      "sp-cinnamon",
+      "sp-chilli",
+      "sp-bay",
+      "sp-cardamom",
+      "sp-blackcard"
+    ],
+    "spices": "Whole spices: cinnamon, bay leaf, green and black cardamom, dried red chilli."
+  }
 }

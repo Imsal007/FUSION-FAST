@@ -17,6 +17,45 @@ def price(p):
     return f"£{p:.2f}"
 
 
+def piece_img():
+    return '<picture><source media="(max-width:760px)" srcset="img/subject-m.webp"><img src="img/subject.webp" alt="" loading="lazy"></picture>'
+
+
+def breakdown(c, aspect):
+    b = c.get("breakdown")
+    if not b:
+        return ""
+    names = {it["id"]: it["name"] for m in c["menu"] for it in m["items"]}
+    parts = ""
+    if b["mode"] == "stack":
+        n = len(b["pieces"])
+        for i, (y0, y1, label) in enumerate(b["pieces"]):
+            side = "r" if i % 2 == 0 else "l"
+            parts += (f'<div class="pc" data-i="{i}" style="--y0:{y0};--y1:{y1};--yc:{(y0 + y1) / 2:.3f}">'
+                      f'<div class="pc-img">{piece_img()}</div><p class="bd-lab {side}">{e(label)}</p></div>')
+        caps = ""
+    else:
+        n = len(b["pieces"])
+        caps = ""
+        for i, label in enumerate(b["pieces"]):
+            parts += f'<div class="pc wedge" data-i="{i}"><div class="pc-img">{piece_img()}</div></div>'
+            caps += f'<p class="cap" data-i="{i}">{e(label)}</p>'
+        caps = f'<div class="bd-caps" aria-hidden="true">{caps}</div>'
+    floats = "".join(f'<img class="fl" data-i="{i}" src="img/{f}.webp" alt="" loading="lazy">' for i, f in enumerate(b.get("floaters", [])))
+    spices = f'<p class="bd-spices">{e(b["spices"])}</p>' if b.get("spices") else ""
+    labels_sr = "".join(f"<li>{e(p[2] if isinstance(p, list) else p)}</li>" for p in b["pieces"])
+    radial = f' data-cx="{b.get("cx", 0.5)}" data-cy="{b.get("cy", 0.5)}"' if b["mode"] == "radial" else ""
+    return f"""<section class="bd" id="inside" data-mode="{b["mode"]}" data-n="{n}"{radial} aria-labelledby="bd-h">
+  <div class="bd-pin">
+    <h2 id="bd-h" class="display h2 bd-title">{e(b["title"])}</h2>
+    <ul class="sr">{labels_sr}</ul>
+    <div class="bd-stage" style="aspect-ratio:{aspect}">{floats}{parts}</div>
+    {caps}{spices}
+    <div class="bd-out"><p class="display">{e(b["outro"])}</p><button class="btn btn-main" data-add="{b["item"]}">Add the {e(names.get(b["item"], "dish").removeprefix("The "))}</button></div>
+  </div>
+</section>"""
+
+
 def build(slug):
     d = os.path.join(DEMOS, slug)
     c = json.load(open(os.path.join(d, "config.json"), encoding="utf-8"))
@@ -65,6 +104,7 @@ def build(slug):
             )
         cats += f'<ul class="cat" id="cat-{m["id"]}" role="tabpanel"{"" if i == 0 else " hidden"}>{rows}</ul>'
 
+    bd_html = breakdown(c, aspect)
     f = c["feature"]
     v = c["visit"]
     hours = "".join(f"<tr><td>{e(a)}</td><td>{e(b)}</td></tr>" for a, b in v["hours"])
@@ -119,6 +159,8 @@ def build(slug):
 </section>
 
 <div class="strip" aria-hidden="true"><div class="strip-track">{strip}</div></div>
+
+{bd_html}
 
 <section class="steps wrap" aria-labelledby="steps-h">
   <h2 id="steps-h" class="display h2">How it <span class="acc">works</span></h2>

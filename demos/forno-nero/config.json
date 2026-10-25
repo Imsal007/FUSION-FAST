@@ -204,5 +204,21 @@
       "weight": 800,
       "file": "dm-sans-latin-800-normal.woff2"
     }
-  ]
+  ],
+  "breakdown": {
+    "title": "Slice by slice",
+    "mode": "radial",
+    "item": "margherita",
+    "outro": "Out of the oven and into your hands.",
+    "cx": 0.5,
+    "cy": 0.52,
+    "pieces": [
+      "Slow-proved dough",
+      "Blistered, leopard-spotted crust",
+      "Sweet tomato sauce",
+      "Fior di latte",
+      "Fresh basil",
+      "A drizzle of olive oil"
+    ]
+  }
 }

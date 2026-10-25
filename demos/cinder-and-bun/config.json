@@ -1,61 +1,238 @@
 {
   "slug": "cinder-and-bun",
   "name": "Cinder & Bun",
-  "mark": ["Cinder", "& Bun"],
+  "mark": [
+    "Cinder",
+    "& Bun"
+  ],
   "cuisine": "Smash burgers",
   "area": "Peckham, London SE15",
   "title": "Cinder & Bun | Halal smash burgers in Peckham, order for collection",
   "description": "Halal smash burgers, crispy fries and thick shakes in Peckham. Build your order and send it on WhatsApp. Pay on collection, no app fees.",
   "hero": {
     "eyebrow": "Halal smash burgers · Peckham",
-    "lines": ["Smashed", "to order."],
+    "lines": [
+      "Smashed",
+      "to order."
+    ],
     "sub": "Beef pressed onto a screaming hot grill until the edges go lacy and dark. Cheese, pickles, brioche. Ready in ten minutes.",
     "word": "Cinder",
-    "beat2": ["Pay when you collect.", "No app fees."],
+    "beat2": [
+      "Pay when you collect.",
+      "No app fees."
+    ],
     "subject_alt": "A double smash burger with melted cheese, pickles and burnt-onion mayo"
   },
-  "strip": ["Halal beef", "No app fees", "Pay on collection", "Smashed to order", "Open late"],
-  "steps": [
-    {"t": "Pick your burger", "d": "Tap to add. Change your mind as many times as you like."},
-    {"t": "Send it on WhatsApp", "d": "One tap and your order lands straight with the kitchen."},
-    {"t": "Collect in ten", "d": "Walk in, grab the bag, pay at the counter."}
+  "strip": [
+    "Halal beef",
+    "No app fees",
+    "Pay on collection",
+    "Smashed to order",
+    "Open late"
   ],
-  "feature": {"img": "feature", "title": "The Cinder Double", "text": "Two smashed patties, two slices of melted cheese, pickles and burnt-onion mayo on a toasted brioche bun.", "item": "double"},
+  "steps": [
+    {
+      "t": "Pick your burger",
+      "d": "Tap to add. Change your mind as many times as you like."
+    },
+    {
+      "t": "Send it on WhatsApp",
+      "d": "One tap and your order lands straight with the kitchen."
+    },
+    {
+      "t": "Collect in ten",
+      "d": "Walk in, grab the bag, pay at the counter."
+    }
+  ],
+  "feature": {
+    "img": "feature",
+    "title": "The Cinder Double",
+    "text": "Two smashed patties, two slices of melted cheese, pickles and burnt-onion mayo on a toasted brioche bun.",
+    "item": "double"
+  },
   "menu": [
-    {"id": "burgers", "name": "Burgers", "items": [
-      {"id": "single", "name": "The Cinder Single", "price": 8.50, "desc": "Smashed patty, American cheese, pickles, burnt-onion mayo, brioche.", "tag": "Popular"},
-      {"id": "double", "name": "The Cinder Double", "price": 11.00, "desc": "Two smashed patties, double cheese, pickles, burnt-onion mayo.", "tag": "Best seller"},
-      {"id": "triple", "name": "Smoky Triple", "price": 13.50, "desc": "Three patties, smoked cheese, crispy onions, smoky sauce. Bring an appetite.", "tag": ""},
-      {"id": "honey", "name": "Hot Honey Chicken", "price": 9.50, "desc": "Crispy chicken thigh, hot honey, crunchy slaw, pickles.", "tag": "Spicy"},
-      {"id": "veg", "name": "Veg Smash", "price": 9.00, "desc": "Crispy plant patty, cheese, lettuce, tomato, house sauce.", "tag": "Veg"}
-    ]},
-    {"id": "sides", "name": "Sides", "items": [
-      {"id": "fries", "name": "Skin-on Fries", "price": 3.50, "desc": "Salted, crisp, a bit too easy to finish.", "tag": ""},
-      {"id": "cheesefries", "name": "Cinder Cheese Fries", "price": 5.00, "desc": "Fries, cheese sauce, crispy onions, burnt-onion mayo.", "tag": "Popular"},
-      {"id": "rings", "name": "Onion Rings", "price": 4.00, "desc": "Thick cut, beer-free batter, golden.", "tag": ""}
-    ]},
-    {"id": "drinks", "name": "Shakes & Drinks", "items": [
-      {"id": "shake", "name": "Salted Caramel Shake", "price": 5.00, "desc": "Thick enough to need a spoon first.", "tag": ""},
-      {"id": "lemonade", "name": "Fresh Lemonade", "price": 2.50, "desc": "Sharp, cold, made in-house.", "tag": ""},
-      {"id": "can", "name": "Soft Drink Can", "price": 1.50, "desc": "", "tag": ""}
-    ]}
+    {
+      "id": "burgers",
+      "name": "Burgers",
+      "items": [
+        {
+          "id": "single",
+          "name": "The Cinder Single",
+          "price": 8.5,
+          "desc": "Smashed patty, American cheese, pickles, burnt-onion mayo, brioche.",
+          "tag": "Popular"
+        },
+        {
+          "id": "double",
+          "name": "The Cinder Double",
+          "price": 11.0,
+          "desc": "Two smashed patties, double cheese, pickles, burnt-onion mayo.",
+          "tag": "Best seller"
+        },
+        {
+          "id": "triple",
+          "name": "Smoky Triple",
+          "price": 13.5,
+          "desc": "Three patties, smoked cheese, crispy onions, smoky sauce. Bring an appetite.",
+          "tag": ""
+        },
+        {
+          "id": "honey",
+          "name": "Hot Honey Chicken",
+          "price": 9.5,
+          "desc": "Crispy chicken thigh, hot honey, crunchy slaw, pickles.",
+          "tag": "Spicy"
+        },
+        {
+          "id": "veg",
+          "name": "Veg Smash",
+          "price": 9.0,
+          "desc": "Crispy plant patty, cheese, lettuce, tomato, house sauce.",
+          "tag": "Veg"
+        }
+      ]
+    },
+    {
+      "id": "sides",
+      "name": "Sides",
+      "items": [
+        {
+          "id": "fries",
+          "name": "Skin-on Fries",
+          "price": 3.5,
+          "desc": "Salted, crisp, a bit too easy to finish.",
+          "tag": ""
+        },
+        {
+          "id": "cheesefries",
+          "name": "Cinder Cheese Fries",
+          "price": 5.0,
+          "desc": "Fries, cheese sauce, crispy onions, burnt-onion mayo.",
+          "tag": "Popular"
+        },
+        {
+          "id": "rings",
+          "name": "Onion Rings",
+          "price": 4.0,
+          "desc": "Thick cut, beer-free batter, golden.",
+          "tag": ""
+        }
+      ]
+    },
+    {
+      "id": "drinks",
+      "name": "Shakes & Drinks",
+      "items": [
+        {
+          "id": "shake",
+          "name": "Salted Caramel Shake",
+          "price": 5.0,
+          "desc": "Thick enough to need a spoon first.",
+          "tag": ""
+        },
+        {
+          "id": "lemonade",
+          "name": "Fresh Lemonade",
+          "price": 2.5,
+          "desc": "Sharp, cold, made in-house.",
+          "tag": ""
+        },
+        {
+          "id": "can",
+          "name": "Soft Drink Can",
+          "price": 1.5,
+          "desc": "",
+          "tag": ""
+        }
+      ]
+    }
   ],
   "visit": {
-    "lines": ["Peckham, London SE15"],
-    "hours": [["Mon to Thu", "12pm to 11pm"], ["Fri and Sat", "12pm to 1am"], ["Sunday", "12pm to 10pm"]],
+    "lines": [
+      "Peckham, London SE15"
+    ],
+    "hours": [
+      [
+        "Mon to Thu",
+        "12pm to 11pm"
+      ],
+      [
+        "Fri and Sat",
+        "12pm to 1am"
+      ],
+      [
+        "Sunday",
+        "12pm to 10pm"
+      ]
+    ],
     "note": "No alcohol served. Allergies? Tell us when you order and we will talk you through it."
   },
   "whatsapp": "447508407866",
   "phone": "020 0000 0000",
   "theme": {
-    "bg": "#0c0a08", "bg2": "#161210", "ink": "#f6efe3", "muted": "#a89c8c",
-    "accent": "#ffc21a", "accent_ink": "#0c0a08", "glow": "#ff5a1f",
-    "display": "Bowlby One", "body": "DM Sans"
+    "bg": "#0c0a08",
+    "bg2": "#161210",
+    "ink": "#f6efe3",
+    "muted": "#a89c8c",
+    "accent": "#ffc21a",
+    "accent_ink": "#0c0a08",
+    "glow": "#ff5a1f",
+    "display": "Bowlby One",
+    "body": "DM Sans"
   },
   "fonts": [
-    {"family": "Bowlby One", "weight": 400, "file": "bowlby-one-latin-400-normal.woff2"},
-    {"family": "DM Sans", "weight": 400, "file": "dm-sans-latin-400-normal.woff2"},
-    {"family": "DM Sans", "weight": 700, "file": "dm-sans-latin-700-normal.woff2"},
-    {"family": "DM Sans", "weight": 800, "file": "dm-sans-latin-800-normal.woff2"}
-  ]
+    {
+      "family": "Bowlby One",
+      "weight": 400,
+      "file": "bowlby-one-latin-400-normal.woff2"
+    },
+    {
+      "family": "DM Sans",
+      "weight": 400,
+      "file": "dm-sans-latin-400-normal.woff2"
+    },
+    {
+      "family": "DM Sans",
+      "weight": 700,
+      "file": "dm-sans-latin-700-normal.woff2"
+    },
+    {
+      "family": "DM Sans",
+      "weight": 800,
+      "file": "dm-sans-latin-800-normal.woff2"
+    }
+  ],
+  "breakdown": {
+    "title": "Inside the Double",
+    "mode": "stack",
+    "item": "double",
+    "outro": "Built to order, every time.",
+    "pieces": [
+      [
+        0,
+        0.39,
+        "Toasted brioche bun"
+      ],
+      [
+        0.39,
+        0.56,
+        "Melted cheese, burnt-onion mayo"
+      ],
+      [
+        0.56,
+        0.66,
+        "Two smashed patties"
+      ],
+      [
+        0.66,
+        0.79,
+        "Pickles, tomato, crisp lettuce"
+      ],
+      [
+        0.79,
+        1,
+        "Brioche base"
+      ]
+    ]
+  }
 }
