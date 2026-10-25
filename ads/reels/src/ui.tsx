@@ -59,7 +59,7 @@ export const Rise: React.FC<{
       }}
     >
       {text.split("\n").map((line, li) => (
-        <div key={li} style={{ display: "block", whiteSpace: "nowrap" }}>
+        <div key={li} style={{ display: "block", whiteSpace: "nowrap", overflow: "hidden", paddingBottom: "0.12em", marginBottom: "-0.12em" }}>
           {line.split(" ").map((raw, wi) => {
             const opens = raw.startsWith("*");
             const closes = raw.endsWith("*") && (raw.length > 1 || !opens);
@@ -74,8 +74,8 @@ export const Rise: React.FC<{
                 style={{
                   display: "inline-block",
                   marginRight: "0.22em",
-                  transform: `translateY(${interpolate(s, [0, 1], [0.5 * size, 0])}px)`,
-                  opacity: s,
+                  transform: `translateY(${interpolate(s, [0, 1], [112, 0])}%)`,
+                  opacity: Math.min(1, s * 2.5),
                   color: hot ? accent : undefined,
                 }}
               >
@@ -316,3 +316,10 @@ export const Edges: React.FC<{ children: React.ReactNode; inF?: number; outF?: n
   );
   return <AbsoluteFill style={{ opacity: outF === 0 && inF === 0 ? 1 : o }}>{children}</AbsoluteFill>;
 };
+
+/* End card made in HyperFrames (ads/hyperframes/endcard), rendered to video and played here. */
+export const EndCard: React.FC = () => (
+  <AbsoluteFill style={{ background: C.red }}>
+    <OffthreadVideo src={staticFile("hf/endcard.mp4")} muted style={{ width: "100%", height: "100%" }} />
+  </AbsoluteFill>
+);

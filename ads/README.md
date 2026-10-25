@@ -11,7 +11,8 @@ Ads that send restaurant owners to the free demo on https://saldigital.co/lp/res
 | `out/stills/S1-*` ... `S4-*` | 4 single images, 1080x1350 PNG |
 | `AD-COPY.md` | Primary text, headlines, descriptions and UTM tag for every ad, plus organic captions |
 | `CAMPAIGN.md` | Meta setup for 5 GBP a day UK-wide, launch order, tests and pause rules |
-| `reels/` | Remotion source for all of the above |
+| `reels/` | Remotion source for the reels and stills (edit, scenes, 3D phones, sound) |
+| `hyperframes/endcard/` | HyperFrames source for the animated end card used in every reel (logo wipe, masked headline, light sweep, URL pill) |
 
 | Reel | Angle |
 |---|---|
@@ -30,8 +31,21 @@ Reels are laid out for Meta's UI: key copy stays between 280px and 1250px from t
 
 - **Voiceover:** Kokoro (local, open model), British voice `bf_emma`. Lines and timings in `reels/vo-lines.json`, files in `reels/public/vo/`. Regenerate a line with `npx hyperframes tts "<text>" -v bf_emma -s 1.05 -o reels/public/vo/<file>.wav` (needs `pip install kokoro-onnx soundfile`).
 - **Music:** two beds generated locally with MusicGen (`facebook/musicgen-small`), loudness-normalised to -16 LUFS, in `reels/public/music/`. `bed-a` under R1 to R4 and R7, `bed-b` under R5 and R6.
-- **Sound effects:** Pixabay Content License (commercial use, no attribution needed), in `reels/public/sfx/`. Cue sheets in `reels/src/sound.tsx`.
+- **Sound effects:** from the HyperFrames media library, Pixabay Content License (commercial use, no attribution needed), in `reels/public/sfx/`. Every on-screen event has a cue: whooshes on cuts and as phones rise, sparkles as dishes float in, pops on labels and pills, ticking under the counting numbers, clicks on menu taps, a ping when the order lands, an error tone on the LOOKS CHEAP stamp, and a riser into a bass hit and chime on the end card. Cue sheets in `reels/src/sound.tsx`.
 - Every reel also works muted: all the voiceover lines are on screen.
+
+## Look
+
+Dark cinematic stages lit in each restaurant's own colours (its food photo blurred behind), phones in 3D perspective with a glass sheen, dishes floating at different depths, headlines rising out of a mask, push-through transitions, and film grain plus a vignette over every frame (`reels/src/premium.tsx`).
+
+## End card (HyperFrames)
+
+```bash
+cd ads/hyperframes/endcard
+npx hyperframes check
+npx hyperframes render --quality delivery -o out/endcard.mp4
+cp out/endcard.mp4 ../../reels/public/hf/endcard.mp4
+```
 
 ## Re-rendering
 

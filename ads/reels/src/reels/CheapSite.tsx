@@ -1,20 +1,20 @@
 import React from "react";
-import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame } from "remotion";
+import { AbsoluteFill, interpolate } from "remotion";
 import { TransitionSeries, linearTiming } from "@remotion/transitions";
-import { fade } from "@remotion/transitions/fade";
-import { slide } from "@remotion/transitions/slide";
 import { C, CAP, CX, SAFE_TOP, SIDE, SIDE_R } from "../theme";
+import { DemoClip, Disclaimer, EndCard, Pill, Progress, Rise, useSpringIn } from "../ui";
+import { FloatFood, Finish, HOT, Phone3D, Stage, push } from "../premium";
 import { SoundTrack, CUES } from "../sound";
 import { VO } from "../vo-data";
-import { Cta, DemoClip, Disclaimer, LivingCream, Phone, Pill, Progress, Rise, useSpringIn } from "../ui";
 
 const T = 8;
-export const CHEAP_FRAMES = 80 + 110 + 130 + 100 + 100 - 4 * T;
+export const CHEAP_FRAMES = 80 + 110 + 130 + 100 + 108 - 4 * T;
 
 const Hook: React.FC = () => (
-  <AbsoluteFill style={{ background: C.ink }}>
-    <div style={{ position: "absolute", top: SAFE_TOP + 40, left: SIDE, right: SIDE_R }}>
-      <Rise text={"Nobody orders\nfrom a website\nthat looks\n*cheap.*"} size={118} color={C.cream} accent="#FF5148" stagger={3} />
+  <AbsoluteFill>
+    <Stage accent={HOT} />
+    <div style={{ position: "absolute", top: SAFE_TOP + 30, left: SIDE, right: SIDE_R }}>
+      <Rise text={"Nobody orders\nfrom a website\nthat looks\n*cheap.*"} size={118} color={C.cream} accent={HOT} stagger={3} />
     </div>
   </AbsoluteFill>
 );
@@ -40,35 +40,35 @@ const TiredSite: React.FC = () => (
 );
 
 const Cheap: React.FC = () => {
-  const s = useSpringIn(4, 18);
   const stamp = useSpringIn(52, 10);
   return (
     <AbsoluteFill>
-      <LivingCream />
+      <Stage accent="#5d6b8a" />
       <div style={{ position: "absolute", top: SAFE_TOP, left: SIDE, right: SIDE_R }}>
-        <Rise text={"Most takeaway\nsites look\nlike this."} size={100} />
+        <Rise text={"Most takeaway\nsites look\nlike this."} size={100} color={C.cream} accent={HOT} />
       </div>
-      <div style={{ position: "absolute", left: CX, top: 640, transform: `translateX(-50%) translateY(${interpolate(s, [0, 1], [220, 0])}px) rotate(2deg)` }}>
-        <Phone width={400}>
+      <div style={{ position: "absolute", left: CX - 200, top: 640 }}>
+        <Phone3D width={400} from={24} to={8}>
           <TiredSite />
-        </Phone>
+        </Phone3D>
       </div>
       <div
         style={{
           position: "absolute",
           top: 900,
-          left: 170,
-          border: `10px solid ${C.red}`,
-          color: C.red,
+          left: 150,
+          border: `10px solid ${HOT}`,
+          color: HOT,
           fontFamily: "Inter Display",
           fontWeight: 900,
           fontSize: 92,
           letterSpacing: "-0.03em",
           padding: "6px 34px",
           borderRadius: 24,
-          background: "rgba(244,241,234,.86)",
-          transform: `rotate(-12deg) scale(${interpolate(stamp, [0, 1], [2.2, 1])})`,
+          background: "rgba(13,11,10,.82)",
+          transform: `rotate(-12deg) scale(${interpolate(stamp, [0, 1], [2.4, 1])})`,
           opacity: stamp,
+          boxShadow: "0 30px 60px -20px rgba(0,0,0,.7)",
         }}
       >
         LOOKS CHEAP
@@ -77,77 +77,66 @@ const Cheap: React.FC = () => {
   );
 };
 
-const Yours: React.FC = () => {
-  const s = useSpringIn(4, 18);
-  return (
-    <AbsoluteFill>
-      <LivingCream tint="#f2a516" />
-      <div style={{ position: "absolute", top: SAFE_TOP, left: SIDE, right: SIDE_R }}>
-        <Rise text={"Yours could\nlook like *this.*"} size={104} />
-        <Disclaimer name="Saffron Lane" style={{ marginTop: 20, fontSize: 28 }} />
-      </div>
-      <div style={{ position: "absolute", left: CX, top: 640, transform: `translateX(-50%) translateY(${interpolate(s, [0, 1], [220, 0])}px) rotate(-1.5deg)` }}>
-        <Phone width={400}>
-          <DemoClip slug="saffron-lane" from={CAP.heroStart} rate={1} />
-        </Phone>
-      </div>
-    </AbsoluteFill>
-  );
-};
+const Yours: React.FC = () => (
+  <AbsoluteFill>
+    <Stage accent="#f2a516" plate="saffron-lane" />
+    <FloatFood slug="saffron-lane" x={560} y={760} w={440} depth={0.8} rot={-6} delay={8} />
+    <div style={{ position: "absolute", top: SAFE_TOP, left: SIDE, right: SIDE_R }}>
+      <Rise text={"Yours could\nlook like *this.*"} size={104} color={C.cream} accent="#f2a516" />
+      <Disclaimer name="Saffron Lane" color="rgba(244,241,234,.55)" style={{ marginTop: 20, fontSize: 28 }} />
+    </div>
+    <div style={{ position: "absolute", left: CX - 240, top: 640 }}>
+      <Phone3D width={400}>
+        <DemoClip slug="saffron-lane" from={CAP.heroStart} rate={1} />
+      </Phone3D>
+    </div>
+  </AbsoluteFill>
+);
 
 const Offer: React.FC = () => {
-  const f = useCurrentFrame();
   const foods = ["cinder-and-bun", "forno-nero", "saffron-lane", "sugar-and-steam"];
   return (
     <AbsoluteFill>
-      <LivingCream />
+      <Stage accent={HOT} />
       <div style={{ position: "absolute", top: SAFE_TOP, left: SIDE, right: SIDE_R }}>
-        <Rise text={"A free demo with\nyour name, menu\nand *food.*"} size={100} />
+        <Rise text={"A free demo with\nyour name, menu\nand *food.*"} size={100} color={C.cream} accent={HOT} />
         <div style={{ display: "flex", flexWrap: "wrap", gap: 18, marginTop: 50 }}>
-          <Pill delay={18}>Ready in 48 hours</Pill>
-          <Pill delay={24}>No card</Pill>
+          <Pill delay={18} bg={C.cream} color={C.ink}>Ready in 48 hours</Pill>
+          <Pill delay={24} bg={C.cream} color={C.ink}>No card</Pill>
           <Pill delay={30} bg={C.red}>Pay only if you love it</Pill>
         </div>
       </div>
-      {foods.map((slug, i) => {
-        const x = SIDE + i * 200;
-        const y = 800 + Math.sin(f / 18 + i) * 12 + (i % 2) * 60;
-        const s = interpolate(f, [10 + i * 5, 26 + i * 5], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-        return (
-          <Img
-            key={slug}
-            src={staticFile(`food/${slug}.webp`)}
-            style={{ position: "absolute", left: x, top: y, width: 210, transform: `scale(${s}) rotate(${(i - 1.5) * 6}deg)`, filter: "drop-shadow(0 24px 22px rgba(20,20,20,.35))" }}
-          />
-        );
-      })}
+      {foods.map((slug, i) => (
+        <FloatFood key={slug} slug={slug} x={SIDE - 20 + i * 205} y={830 + (i % 2) * 70} w={230} depth={0.5 + (i % 2) * 0.4} rot={(i - 1.5) * 6} delay={8 + i * 4} />
+      ))}
     </AbsoluteFill>
   );
 };
 
 export const CheapSite: React.FC = () => (
-  <AbsoluteFill style={{ background: C.cream }}>
+  <AbsoluteFill style={{ background: "#0d0b0a" }}>
     <TransitionSeries>
       <TransitionSeries.Sequence name="Hook" durationInFrames={80}>
         <Hook />
       </TransitionSeries.Sequence>
-      <TransitionSeries.Transition presentation={fade()} timing={linearTiming({ durationInFrames: T })} />
+      <TransitionSeries.Transition presentation={push()} timing={linearTiming({ durationInFrames: T })} />
       <TransitionSeries.Sequence name="Most sites" durationInFrames={110}>
         <Cheap />
       </TransitionSeries.Sequence>
-      <TransitionSeries.Transition presentation={slide({ direction: "from-right" })} timing={linearTiming({ durationInFrames: T })} />
+      <TransitionSeries.Transition presentation={push()} timing={linearTiming({ durationInFrames: T })} />
       <TransitionSeries.Sequence name="Yours" durationInFrames={130}>
         <Yours />
       </TransitionSeries.Sequence>
-      <TransitionSeries.Transition presentation={fade()} timing={linearTiming({ durationInFrames: T })} />
+      <TransitionSeries.Transition presentation={push()} timing={linearTiming({ durationInFrames: T })} />
       <TransitionSeries.Sequence name="Offer" durationInFrames={100}>
         <Offer />
       </TransitionSeries.Sequence>
-      <TransitionSeries.Transition presentation={fade()} timing={linearTiming({ durationInFrames: T })} />
-      <TransitionSeries.Sequence name="CTA" durationInFrames={100}>
-        <Cta />
+      <TransitionSeries.Transition presentation={push()} timing={linearTiming({ durationInFrames: T })} />
+      <TransitionSeries.Sequence name="End card (HyperFrames)" durationInFrames={108}>
+        <EndCard />
       </TransitionSeries.Sequence>
     </TransitionSeries>
+    <Finish />
     <Progress total={CHEAP_FRAMES} />
     <SoundTrack vo={VO.cheap} sfx={CUES.cheap} music="bed-b" total={CHEAP_FRAMES} />
   </AbsoluteFill>
