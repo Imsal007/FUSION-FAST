@@ -1,0 +1,153 @@
+{
+ "demo-cinder-and-bun": [
+  [
+   6,
+   66,
+   "Your burgers deserve a website like this."
+  ]
+ ],
+ "demo-forno-nero": [
+  [
+   6,
+   66,
+   "Your pizza deserves a website like this."
+  ]
+ ],
+ "demo-saffron-lane": [
+  [
+   6,
+   66,
+   "Your curries deserve a website like this."
+  ]
+ ],
+ "demo-sugar-and-steam": [
+  [
+   6,
+   66,
+   "Your desserts deserve a website like this."
+  ]
+ ],
+ "demo": [
+  [
+   72,
+   92,
+   "It opens like a film."
+  ],
+  [
+   170,
+   104,
+   "Every dish, broken down, as you scroll."
+  ],
+  [
+   282,
+   104,
+   "Customers tap, order, and send."
+  ],
+  [
+   394,
+   74,
+   "It lands on your WhatsApp. No commission."
+  ],
+  [
+   478,
+   88,
+   "Tap below to get your free demo."
+  ]
+ ],
+ "commission": [
+  [
+   6,
+   74,
+   "Still paying the apps thirty percent of every order?"
+  ],
+  [
+   84,
+   94,
+   "At two thousand a week, that's six hundred pounds in commission."
+  ],
+  [
+   176,
+   52,
+   "Thirty one thousand a year."
+  ],
+  [
+   228,
+   130,
+   "Move one in four orders to your own site. Keep about seven thousand eight hundred."
+  ],
+  [
+   366,
+   80,
+   "Orders go straight to your WhatsApp."
+  ],
+  [
+   466,
+   88,
+   "Tap below to get your free demo."
+  ]
+ ],
+ "cheap": [
+  [
+   6,
+   72,
+   "Nobody orders from a website that looks cheap."
+  ],
+  [
+   84,
+   84,
+   "And most takeaway sites look like this."
+  ],
+  [
+   182,
+   100,
+   "Yours could look like this."
+  ],
+  [
+   302,
+   82,
+   "A free demo with your menu, in forty eight hours."
+  ],
+  [
+   396,
+   86,
+   "Pay only if you love it. Tap below."
+  ]
+ ],
+ "four": [
+  [
+   6,
+   60,
+   "Four restaurants. Four websites."
+  ],
+  [
+   72,
+   48,
+   "Burgers."
+  ],
+  [
+   126,
+   48,
+   "Pizza."
+  ],
+  [
+   180,
+   48,
+   "Curry."
+  ],
+  [
+   234,
+   48,
+   "Desserts."
+  ],
+  [
+   290,
+   72,
+   "Whatever you cook, what's yours?"
+  ],
+  [
+   372,
+   88,
+   "Tap below to get your free demo."
+  ]
+ ]
+}

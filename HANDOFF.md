@@ -26,7 +26,7 @@ For each slug: clone the repo, copy `exports/<slug>/.` into it, commit on `main`
 
 ## Known issues
 - Saffron Lane biryani cutout has a rough edge at the bottom of the plate (swap photo or clean up).
-- Demo WhatsApp number 447508407866 is a placeholder shared with the Fusion Fast demo. Replace with a dedicated demo number before the pages are public.
+- Demo orders go to the SAL Digital WhatsApp (447438815827), the same number as the landing page.
 - Demo images are Unsplash photos, cutouts made with rembg (u2net). Breakdown uses straight slices of one photo, not separate ingredients (no video or image generation key available).
 - No tracking on the demo pages by design; conversion tracking lives on saldigital.co.
 

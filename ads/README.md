@@ -6,7 +6,7 @@ Ads that send restaurant owners to the free demo on https://saldigital.co/lp/res
 
 | Path | What |
 |---|---|
-| `out/R1-CinderAndBun.mp4` ... `out/R7-FourDemos.mp4` | 7 reels, 1080x1920, 30fps, 15 to 19 seconds, no audio |
+| `out/R1-CinderAndBun.mp4` ... `out/R7-FourDemos.mp4` | 7 reels, 1080x1920, 30fps, 15 to 19 seconds, with voiceover, music and sound effects |
 | `out/stills/C1-*`, `C2-*`, `C3-*` | 3 carousels (6, 7 and 6 slides), 1080x1350 PNG |
 | `out/stills/S1-*` ... `S4-*` | 4 single images, 1080x1350 PNG |
 | `AD-COPY.md` | Primary text, headlines, descriptions and UTM tag for every ad, plus organic captions |
@@ -21,6 +21,17 @@ Ads that send restaurant owners to the free demo on https://saldigital.co/lp/res
 | R7 | Four demos in quick cuts, then "What's yours?" |
 
 The demo restaurants are fictional and every creative says so on screen or in the copy.
+
+## Safe zones
+
+Reels are laid out for Meta's UI: key copy stays between 280px and 1250px from the top, 100px from the left and 170px from the right (the like and comment buttons). Headlines measure themselves and shrink to fit that width. The constants are in `reels/src/theme.ts` (`SAFE_TOP`, `SAFE_BOTTOM`, `SIDE`, `SIDE_R`).
+
+## Sound
+
+- **Voiceover:** Kokoro (local, open model), British voice `bf_emma`. Lines and timings in `reels/vo-lines.json`, files in `reels/public/vo/`. Regenerate a line with `npx hyperframes tts "<text>" -v bf_emma -s 1.05 -o reels/public/vo/<file>.wav` (needs `pip install kokoro-onnx soundfile`).
+- **Music:** two beds generated locally with MusicGen (`facebook/musicgen-small`), loudness-normalised to -16 LUFS, in `reels/public/music/`. `bed-a` under R1 to R4 and R7, `bed-b` under R5 and R6.
+- **Sound effects:** Pixabay Content License (commercial use, no attribution needed), in `reels/public/sfx/`. Cue sheets in `reels/src/sound.tsx`.
+- Every reel also works muted: all the voiceover lines are on screen.
 
 ## Re-rendering
 

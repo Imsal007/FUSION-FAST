@@ -2,7 +2,9 @@ import React from "react";
 import { AbsoluteFill, interpolate, useCurrentFrame } from "remotion";
 import { TransitionSeries, linearTiming } from "@remotion/transitions";
 import { fade } from "@remotion/transitions/fade";
-import { C, CAP, DEMOS, SAFE_TOP, SIDE } from "../theme";
+import { C, CAP, CX, DEMOS, SAFE_TOP, SIDE, SIDE_R } from "../theme";
+import { SoundTrack, CUES } from "../sound";
+import { VO } from "../vo-data";
 import { Body, Cta, DemoClip, Disclaimer, LivingCream, OrderCard, Phone, Progress, Rise, useSpringIn } from "../ui";
 
 export type DemoReelProps = { slug: string; hook: string };
@@ -30,8 +32,8 @@ const Hook: React.FC<{ slug: string; hook: string }> = ({ slug, hook }) => {
             : "linear-gradient(180deg, rgba(10,8,6,1) 0%, rgba(10,8,6,1) 33%, rgba(10,8,6,0) 50%)",
         }}
       />
-      <div style={{ position: "absolute", top: SAFE_TOP - 30, left: SIDE, right: SIDE }}>
-        <Rise text={hook} size={110} color={light ? C.ink : C.cream} accent={d.accent} stagger={3} />
+      <div style={{ position: "absolute", top: SAFE_TOP, left: SIDE, right: SIDE_R }}>
+        <Rise text={hook} size={112} color={light ? C.ink : C.cream} accent={d.accent} stagger={3} />
       </div>
     </AbsoluteFill>
   );
@@ -46,19 +48,19 @@ const PhoneScene: React.FC<{ slug: string; line: string; from: number; rate: num
   return (
     <AbsoluteFill>
       <LivingCream tint={d.accent} />
-      <div style={{ position: "absolute", top: SAFE_TOP - 20, left: SIDE, right: SIDE }}>
+      <div style={{ position: "absolute", top: SAFE_TOP, left: SIDE, right: SIDE_R }}>
         <Rise text={line} size={104} accent={C.red} />
         {note ? <Disclaimer name={d.name} style={{ marginTop: 22, fontSize: 28 }} /> : null}
       </div>
       <div
         style={{
           position: "absolute",
-          left: "50%",
-          top: 630,
+          left: CX,
+          top: 570,
           transform: `translateX(-50%) translateY(${interpolate(s, [0, 1], [220, 0]) + drift}px) rotate(${interpolate(s, [0, 1], [4, -1.5])}deg)`,
         }}
       >
-        <Phone width={650}>
+        <Phone width={440}>
           <DemoClip slug={slug} from={from} rate={rate} />
         </Phone>
       </div>
@@ -72,18 +74,18 @@ const OrderLands: React.FC<{ slug: string }> = ({ slug }) => {
   return (
     <AbsoluteFill>
       <LivingCream tint={C.wa} />
-      <div style={{ position: "absolute", left: "50%", top: 1060, transform: "translateX(-50%) rotate(-1.5deg)" }}>
-        <Phone width={600}>
+      <div style={{ position: "absolute", left: CX, top: 1010, transform: "translateX(-50%) rotate(-1.5deg)" }}>
+        <Phone width={440}>
           <DemoClip slug={slug} from={CAP.end - 0.9} rate={0.25} />
         </Phone>
       </div>
-      <div style={{ position: "absolute", top: SAFE_TOP - 20, left: SIDE, right: SIDE }}>
+      <div style={{ position: "absolute", top: SAFE_TOP, left: SIDE, right: SIDE_R }}>
         <Rise text={"The order lands\non *your* WhatsApp."} size={100} />
         <Body delay={12} size={44} style={{ marginTop: 24 }}>
           No app commission. Paid when they collect.
         </Body>
       </div>
-      <div style={{ position: "absolute", top: 700, left: 100 }}>
+      <div style={{ position: "absolute", top: 640, left: SIDE }}>
         <OrderCard name={d.name} lines={d.order.lines} total={d.order.total} delay={10} />
       </div>
     </AbsoluteFill>
@@ -119,6 +121,7 @@ export const DemoReel: React.FC<DemoReelProps> = ({ slug, hook }) => {
         </TransitionSeries.Sequence>
       </TransitionSeries>
       <Progress total={DEMO_REEL_FRAMES} />
+      <SoundTrack vo={[...VO[`demo-${slug}`], ...VO.demo]} sfx={CUES.demo} music="bed-a" total={DEMO_REEL_FRAMES} />
     </AbsoluteFill>
   );
 };

@@ -8,7 +8,7 @@ Labels: **FACT** (known), **HYPOTHESIS** (to test), **MISSING** (not known yet, 
 1. **Check the conversion event.** In Events Manager, open the SAL Digital pixel and submit the demo form on https://saldigital.co/lp/restaurants/ once yourself. Confirm a `Lead` event fires on submit (Test Events tab). If only `PageView` shows, the campaign cannot optimise for leads yet. MISSING: whether `Lead` fires today.
 2. **Check the WhatsApp button.** If the "Or message us" link fires a `Contact` event, keep it; it is the fallback optimisation event. MISSING.
 3. **Consent banner.** Visitors who click "Essential only" will not be tracked, so Meta will under-count leads. Compare Meta's lead count with the real form submissions you receive each week. Conversions API would close the gap later.
-4. **Replace the demo WhatsApp number** on the four demo sites if you do not want messages from strangers who find them (currently 447508407866).
+4. **Demo WhatsApp:** the four demo sites send test orders to the SAL Digital WhatsApp (447438815827). A message that starts "Hi Cinder & Bun" (or another demo name) is someone trying a demo: a warm lead.
 
 ## 2. Structure
 

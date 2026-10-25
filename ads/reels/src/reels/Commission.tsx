@@ -2,11 +2,13 @@ import React from "react";
 import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from "remotion";
 import { TransitionSeries, linearTiming } from "@remotion/transitions";
 import { fade } from "@remotion/transitions/fade";
-import { C, CAP, DEMOS, FONT, FONT_DISPLAY, SAFE_TOP, SIDE } from "../theme";
+import { C, CAP, CX, DEMOS, FONT, FONT_DISPLAY, SAFE_TOP, SIDE, SIDE_R } from "../theme";
+import { SoundTrack, CUES } from "../sound";
+import { VO } from "../vo-data";
 import { Body, Cta, DemoClip, Disclaimer, LivingCream, Phone, Progress, Rise, useSpringIn } from "../ui";
 
 const T = 8;
-export const COMMISSION_FRAMES = 80 + 150 + 120 + 120 + 100 - 4 * T;
+export const COMMISSION_FRAMES = 80 + 150 + 140 + 120 + 100 - 4 * T;
 
 const gbp = (n: number) => "£" + Math.round(n).toLocaleString("en-GB");
 
@@ -39,7 +41,7 @@ const Receipt: React.FC = () => {
   return (
     <div
       style={{
-        width: 820,
+        width: 800,
         background: C.white,
         borderRadius: 36,
         padding: "40px 52px",
@@ -63,10 +65,10 @@ const Receipt: React.FC = () => {
 const Hook: React.FC = () => (
   <AbsoluteFill>
     <LivingCream />
-    <div style={{ position: "absolute", top: SAFE_TOP - 20, left: SIDE, right: SIDE }}>
+    <div style={{ position: "absolute", top: SAFE_TOP, left: SIDE, right: SIDE_R }}>
       <Rise text={"Still paying\nthe apps *30%*\nof every order?"} size={108} stagger={3} />
     </div>
-    <div style={{ position: "absolute", top: 760, left: 130 }}>
+    <div style={{ position: "absolute", top: 680, left: SIDE + 5 }}>
       <Receipt />
     </div>
   </AbsoluteFill>
@@ -74,23 +76,23 @@ const Hook: React.FC = () => (
 
 const Maths: React.FC = () => (
   <AbsoluteFill style={{ background: C.ink }}>
-    <div style={{ position: "absolute", top: SAFE_TOP, left: SIDE, right: SIDE, color: C.cream }}>
+    <div style={{ position: "absolute", top: SAFE_TOP, left: SIDE, right: SIDE_R, color: C.cream }}>
       <Body color="rgba(244,241,234,.75)" size={46}>
         Say you take £2,000 a week on the apps.
       </Body>
-      <div style={{ marginTop: 70 }}>
-        <Count to={600} start={14} color={C.cream} />
+      <div style={{ marginTop: 50 }}>
+        <Count to={600} start={14} color={C.cream} size={190} />
         <Body delay={20} color={C.cream} size={52} style={{ marginTop: 10, fontWeight: 600 }}>
           goes to the apps every week.
         </Body>
       </div>
-      <div style={{ marginTop: 80 }}>
-        <Count to={31200} start={62} dur={36} color="#FF5148" size={220} />
+      <div style={{ marginTop: 60 }}>
+        <Count to={31200} start={62} dur={36} color="#FF5148" size={176} />
         <Body delay={68} color={C.cream} size={52} style={{ marginTop: 10, fontWeight: 600 }}>
           a year. Gone.
         </Body>
       </div>
-      <Body delay={90} color="rgba(244,241,234,.55)" size={28} style={{ marginTop: 70 }}>
+      <Body delay={90} color="rgba(244,241,234,.55)" size={28} style={{ marginTop: 50, maxWidth: 810 }}>
         Example at 30% commission. UK delivery apps typically charge 15% to 35%.
       </Body>
     </div>
@@ -100,10 +102,10 @@ const Maths: React.FC = () => (
 const Turn: React.FC = () => (
   <AbsoluteFill>
     <LivingCream tint={C.wa} />
-    <div style={{ position: "absolute", top: SAFE_TOP - 20, left: SIDE, right: SIDE }}>
+    <div style={{ position: "absolute", top: SAFE_TOP, left: SIDE, right: SIDE_R }}>
       <Rise text={"Move *1 in 4* orders\nto your own site."} size={104} />
-      <div style={{ marginTop: 110 }}>
-        <Count to={7800} start={26} dur={34} size={230} />
+      <div style={{ marginTop: 80 }}>
+        <Count to={7800} start={26} dur={34} size={200} />
         <Body delay={34} size={54} color={C.ink} style={{ marginTop: 10, fontWeight: 600 }}>
           back in your pocket each year.
         </Body>
@@ -121,12 +123,12 @@ const Proof: React.FC = () => {
   return (
     <AbsoluteFill>
       <LivingCream tint={d.accent} />
-      <div style={{ position: "absolute", top: SAFE_TOP - 20, left: SIDE, right: SIDE }}>
+      <div style={{ position: "absolute", top: SAFE_TOP, left: SIDE, right: SIDE_R }}>
         <Rise text={"Your own site.\nOrders straight\nto *WhatsApp.*"} size={96} />
         <Disclaimer name={d.name} style={{ marginTop: 20, fontSize: 28 }} />
       </div>
-      <div style={{ position: "absolute", left: "50%", top: 760, transform: `translateX(-50%) translateY(${interpolate(s, [0, 1], [220, 0])}px) rotate(-1.5deg)` }}>
-        <Phone width={600}>
+      <div style={{ position: "absolute", left: CX, top: 630, transform: `translateX(-50%) translateY(${interpolate(s, [0, 1], [220, 0])}px) rotate(-1.5deg)` }}>
+        <Phone width={390}>
           <DemoClip slug="cinder-and-bun" from={CAP.menu} rate={1.3} />
         </Phone>
       </div>
@@ -145,7 +147,7 @@ export const Commission: React.FC = () => (
         <Maths />
       </TransitionSeries.Sequence>
       <TransitionSeries.Transition presentation={fade()} timing={linearTiming({ durationInFrames: T })} />
-      <TransitionSeries.Sequence name="The turn" durationInFrames={120}>
+      <TransitionSeries.Sequence name="The turn" durationInFrames={140}>
         <Turn />
       </TransitionSeries.Sequence>
       <TransitionSeries.Transition presentation={fade()} timing={linearTiming({ durationInFrames: T })} />
@@ -158,5 +160,6 @@ export const Commission: React.FC = () => (
       </TransitionSeries.Sequence>
     </TransitionSeries>
     <Progress total={COMMISSION_FRAMES} />
+    <SoundTrack vo={VO.commission} sfx={CUES.commission} music="bed-b" total={COMMISSION_FRAMES} />
   </AbsoluteFill>
 );

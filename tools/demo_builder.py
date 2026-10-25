@@ -158,7 +158,7 @@ def build(slug):
   </div>
 </section>
 
-<div class="strip" aria-hidden="true"><div class="strip-track">{strip}</div></div>
+<div class="strip-wrap" aria-hidden="true"><div class="strip"><div class="strip-track">{strip}</div></div></div>
 
 {bd_html}
 

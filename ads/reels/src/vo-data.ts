@@ -1,0 +1,127 @@
+// Generated from vo-lines.json: [start frame, file in public/vo]
+export const VO: Record<string, [number, string][]> = {
+ "demo-cinder-and-bun": [
+  [
+   6,
+   "demo-cinder-and-bun-0"
+  ]
+ ],
+ "demo-forno-nero": [
+  [
+   6,
+   "demo-forno-nero-0"
+  ]
+ ],
+ "demo-saffron-lane": [
+  [
+   6,
+   "demo-saffron-lane-0"
+  ]
+ ],
+ "demo-sugar-and-steam": [
+  [
+   6,
+   "demo-sugar-and-steam-0"
+  ]
+ ],
+ "demo": [
+  [
+   72,
+   "demo-0"
+  ],
+  [
+   170,
+   "demo-1"
+  ],
+  [
+   282,
+   "demo-2"
+  ],
+  [
+   394,
+   "demo-3"
+  ],
+  [
+   478,
+   "demo-4"
+  ]
+ ],
+ "commission": [
+  [
+   6,
+   "commission-0"
+  ],
+  [
+   84,
+   "commission-1"
+  ],
+  [
+   176,
+   "commission-2"
+  ],
+  [
+   228,
+   "commission-3"
+  ],
+  [
+   366,
+   "commission-4"
+  ],
+  [
+   466,
+   "commission-5"
+  ]
+ ],
+ "cheap": [
+  [
+   6,
+   "cheap-0"
+  ],
+  [
+   84,
+   "cheap-1"
+  ],
+  [
+   182,
+   "cheap-2"
+  ],
+  [
+   302,
+   "cheap-3"
+  ],
+  [
+   396,
+   "cheap-4"
+  ]
+ ],
+ "four": [
+  [
+   6,
+   "four-0"
+  ],
+  [
+   72,
+   "four-1"
+  ],
+  [
+   126,
+   "four-2"
+  ],
+  [
+   180,
+   "four-3"
+  ],
+  [
+   234,
+   "four-4"
+  ],
+  [
+   290,
+   "four-5"
+  ],
+  [
+   372,
+   "four-6"
+  ]
+ ]
+};

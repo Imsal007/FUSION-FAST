@@ -29,11 +29,15 @@ export const FPS = 30;
 export const W = 1080;
 export const H = 1920;
 
-// Meta Reels ads cover roughly the top 14% and bottom 35% with UI.
-// Key copy lives between SAFE_TOP and SAFE_BOTTOM.
-export const SAFE_TOP = 250;
-export const SAFE_BOTTOM = 1260;
-export const SIDE = 84;
+// Meta Reels covers roughly the top 14% and bottom 35% with UI, and the
+// like/comment/share column sits on the right. Key copy and the main visual
+// live inside this box.
+export const SAFE_TOP = 280;
+export const SAFE_BOTTOM = 1250;
+export const SIDE = 100; // left
+export const SIDE_R = 170; // right, clear of the action buttons
+export const SAFE_W = W - SIDE - SIDE_R; // 810
+export const CX = SIDE + SAFE_W / 2; // horizontal centre of the safe box
 
 export const LP = "saldigital.co";
 

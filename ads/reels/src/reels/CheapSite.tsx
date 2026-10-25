@@ -3,7 +3,9 @@ import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame } from "rem
 import { TransitionSeries, linearTiming } from "@remotion/transitions";
 import { fade } from "@remotion/transitions/fade";
 import { slide } from "@remotion/transitions/slide";
-import { C, CAP, SAFE_TOP, SIDE } from "../theme";
+import { C, CAP, CX, SAFE_TOP, SIDE, SIDE_R } from "../theme";
+import { SoundTrack, CUES } from "../sound";
+import { VO } from "../vo-data";
 import { Cta, DemoClip, Disclaimer, LivingCream, Phone, Pill, Progress, Rise, useSpringIn } from "../ui";
 
 const T = 8;
@@ -11,8 +13,8 @@ export const CHEAP_FRAMES = 80 + 110 + 130 + 100 + 100 - 4 * T;
 
 const Hook: React.FC = () => (
   <AbsoluteFill style={{ background: C.ink }}>
-    <div style={{ position: "absolute", top: SAFE_TOP + 40, left: SIDE, right: SIDE }}>
-      <Rise text={"Nobody orders\nfrom a website\nthat looks *cheap.*"} size={118} color={C.cream} accent="#FF5148" stagger={3} />
+    <div style={{ position: "absolute", top: SAFE_TOP + 40, left: SIDE, right: SIDE_R }}>
+      <Rise text={"Nobody orders\nfrom a website\nthat looks\n*cheap.*"} size={118} color={C.cream} accent="#FF5148" stagger={3} />
     </div>
   </AbsoluteFill>
 );
@@ -43,24 +45,24 @@ const Cheap: React.FC = () => {
   return (
     <AbsoluteFill>
       <LivingCream />
-      <div style={{ position: "absolute", top: SAFE_TOP - 20, left: SIDE, right: SIDE }}>
-        <Rise text={"Most takeaway sites\nlook like this."} size={96} />
+      <div style={{ position: "absolute", top: SAFE_TOP, left: SIDE, right: SIDE_R }}>
+        <Rise text={"Most takeaway\nsites look\nlike this."} size={100} />
       </div>
-      <div style={{ position: "absolute", left: "50%", top: 640, transform: `translateX(-50%) translateY(${interpolate(s, [0, 1], [220, 0])}px) rotate(2deg)` }}>
-        <Phone width={620}>
+      <div style={{ position: "absolute", left: CX, top: 640, transform: `translateX(-50%) translateY(${interpolate(s, [0, 1], [220, 0])}px) rotate(2deg)` }}>
+        <Phone width={400}>
           <TiredSite />
         </Phone>
       </div>
       <div
         style={{
           position: "absolute",
-          top: 980,
-          left: 250,
+          top: 900,
+          left: 170,
           border: `10px solid ${C.red}`,
           color: C.red,
           fontFamily: "Inter Display",
           fontWeight: 900,
-          fontSize: 110,
+          fontSize: 92,
           letterSpacing: "-0.03em",
           padding: "6px 34px",
           borderRadius: 24,
@@ -80,12 +82,12 @@ const Yours: React.FC = () => {
   return (
     <AbsoluteFill>
       <LivingCream tint="#f2a516" />
-      <div style={{ position: "absolute", top: SAFE_TOP - 20, left: SIDE, right: SIDE }}>
-        <Rise text={"Yours could look\nlike *this.*"} size={104} />
+      <div style={{ position: "absolute", top: SAFE_TOP, left: SIDE, right: SIDE_R }}>
+        <Rise text={"Yours could\nlook like *this.*"} size={104} />
         <Disclaimer name="Saffron Lane" style={{ marginTop: 20, fontSize: 28 }} />
       </div>
-      <div style={{ position: "absolute", left: "50%", top: 660, transform: `translateX(-50%) translateY(${interpolate(s, [0, 1], [220, 0])}px) rotate(-1.5deg)` }}>
-        <Phone width={630}>
+      <div style={{ position: "absolute", left: CX, top: 640, transform: `translateX(-50%) translateY(${interpolate(s, [0, 1], [220, 0])}px) rotate(-1.5deg)` }}>
+        <Phone width={400}>
           <DemoClip slug="saffron-lane" from={CAP.heroStart} rate={1} />
         </Phone>
       </div>
@@ -99,7 +101,7 @@ const Offer: React.FC = () => {
   return (
     <AbsoluteFill>
       <LivingCream />
-      <div style={{ position: "absolute", top: SAFE_TOP - 20, left: SIDE, right: SIDE }}>
+      <div style={{ position: "absolute", top: SAFE_TOP, left: SIDE, right: SIDE_R }}>
         <Rise text={"A free demo with\nyour name, menu\nand *food.*"} size={100} />
         <div style={{ display: "flex", flexWrap: "wrap", gap: 18, marginTop: 50 }}>
           <Pill delay={18}>Ready in 48 hours</Pill>
@@ -108,14 +110,14 @@ const Offer: React.FC = () => {
         </div>
       </div>
       {foods.map((slug, i) => {
-        const x = 60 + i * 250;
-        const y = 1010 + Math.sin(f / 18 + i) * 14 + (i % 2) * 70;
+        const x = SIDE + i * 200;
+        const y = 800 + Math.sin(f / 18 + i) * 12 + (i % 2) * 60;
         const s = interpolate(f, [10 + i * 5, 26 + i * 5], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
         return (
           <Img
             key={slug}
             src={staticFile(`food/${slug}.webp`)}
-            style={{ position: "absolute", left: x, top: y, width: 230, transform: `scale(${s}) rotate(${(i - 1.5) * 6}deg)`, filter: "drop-shadow(0 24px 22px rgba(20,20,20,.35))" }}
+            style={{ position: "absolute", left: x, top: y, width: 210, transform: `scale(${s}) rotate(${(i - 1.5) * 6}deg)`, filter: "drop-shadow(0 24px 22px rgba(20,20,20,.35))" }}
           />
         );
       })}
@@ -147,5 +149,6 @@ export const CheapSite: React.FC = () => (
       </TransitionSeries.Sequence>
     </TransitionSeries>
     <Progress total={CHEAP_FRAMES} />
+    <SoundTrack vo={VO.cheap} sfx={CUES.cheap} music="bed-b" total={CHEAP_FRAMES} />
   </AbsoluteFill>
 );

@@ -3,7 +3,9 @@ import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame } from "rem
 import { TransitionSeries, linearTiming } from "@remotion/transitions";
 import { fade } from "@remotion/transitions/fade";
 import { slide } from "@remotion/transitions/slide";
-import { C, CAP, DEMOS, SAFE_TOP, SIDE } from "../theme";
+import { C, CAP, DEMOS, SAFE_TOP, SIDE, SIDE_R } from "../theme";
+import { SoundTrack, CUES } from "../sound";
+import { VO } from "../vo-data";
 import { Body, Cta, DemoClip, LivingCream, Progress, Rise } from "../ui";
 
 const T = 8;
@@ -15,7 +17,7 @@ const Hook: React.FC = () => {
   return (
     <AbsoluteFill>
       <LivingCream />
-      <div style={{ position: "absolute", top: SAFE_TOP - 20, left: SIDE, right: SIDE }}>
+      <div style={{ position: "absolute", top: SAFE_TOP, left: SIDE, right: SIDE_R }}>
         <Rise text={"4 restaurants.\n4 *websites.*"} size={124} stagger={4} />
         <Body delay={14} size={28} color={C.mute} style={{ marginTop: 26, fontWeight: 600 }}>
           Concept demos by SAL Digital. The restaurants are fictional.
@@ -30,9 +32,9 @@ const Hook: React.FC = () => {
             src={staticFile(`food/${slug}.webp`)}
             style={{
               position: "absolute",
-              left: 90 + col * 470,
-              top: 760 + row * 420 + Math.sin(f / 16 + i) * 10,
-              width: 420,
+              left: SIDE + col * 420,
+              top: 640 + row * 330 + Math.sin(f / 16 + i) * 10,
+              width: 380,
               transform: `scale(${s}) rotate(${(i - 1.5) * 5}deg)`,
               filter: "drop-shadow(0 28px 26px rgba(20,20,20,.35))",
             }}
@@ -55,7 +57,7 @@ const Cut: React.FC<{ slug: string }> = ({ slug }) => {
         <DemoClip slug={slug} from={CAP.bdPeak - 0.5} />
       </AbsoluteFill>
       <AbsoluteFill style={{ background: `linear-gradient(180deg, rgba(${band},1) 0%, rgba(${band},1) 30%, rgba(${band},0) 44%)` }} />
-      <div style={{ position: "absolute", top: SAFE_TOP - 10, left: SIDE, right: SIDE }}>
+      <div style={{ position: "absolute", top: SAFE_TOP, left: SIDE, right: SIDE_R }}>
         <Rise text={d.cuisine} size={112} color={light ? C.ink : C.cream} stagger={3} />
         <Body delay={6} size={44} color={light ? C.soft : "rgba(244,241,234,.75)"} style={{ marginTop: 14, fontWeight: 600 }}>
           {d.name}
@@ -68,8 +70,8 @@ const Cut: React.FC<{ slug: string }> = ({ slug }) => {
 const Yours: React.FC = () => (
   <AbsoluteFill>
     <LivingCream />
-    <div style={{ position: "absolute", top: SAFE_TOP + 40, left: SIDE, right: SIDE }}>
-      <Rise text={"Grill. Pizza. Curry.\nChinese. Café.\nWhat's *yours?*"} size={112} stagger={4} />
+    <div style={{ position: "absolute", top: SAFE_TOP + 40, left: SIDE, right: SIDE_R }}>
+      <Rise text={"Grill. Pizza.\nCurry. Chinese.\nCafé. What's\n*yours?*"} size={112} stagger={4} />
     </div>
   </AbsoluteFill>
 );
@@ -101,5 +103,6 @@ export const Compilation: React.FC = () => (
       </TransitionSeries.Sequence>
     </TransitionSeries>
     <Progress total={COMPILATION_FRAMES} />
+    <SoundTrack vo={VO.four} sfx={CUES.four} music="bed-a" total={COMPILATION_FRAMES} />
   </AbsoluteFill>
 );

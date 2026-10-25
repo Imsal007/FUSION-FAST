@@ -10,7 +10,8 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
-import { C, FONT, FONT_DISPLAY, FPS, LP, SIDE } from "./theme";
+import { measureText } from "@remotion/layout-utils";
+import { C, FONT, FONT_DISPLAY, FPS, LP, SAFE_W, SIDE, SIDE_R } from "./theme";
 
 export const useSpringIn = (delay = 0, damping = 200) => {
   const frame = useCurrentFrame();
@@ -28,10 +29,20 @@ export const Rise: React.FC<{
   align?: "left" | "center";
   stagger?: number;
   lineHeight?: number;
+  maxWidth?: number;
   style?: React.CSSProperties;
-}> = ({ text, delay = 0, size = 120, color = C.ink, accent = C.red, align = "left", stagger = 4, lineHeight = 0.94, style }) => {
+}> = ({ text, delay = 0, size: wanted = 120, color = C.ink, accent = C.red, align = "left", stagger = 4, lineHeight = 0.94, maxWidth = SAFE_W, style }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
+  // shrink until the widest line fits the safe width (spaces drawn as 0.22em margins)
+  const widest = Math.max(
+    ...text.split("\n").map((line) => {
+      const plain = line.replace(/\*/g, "");
+      const w = measureText({ text: plain, fontFamily: FONT_DISPLAY, fontWeight: "900", fontSize: 100, letterSpacing: "-0.04em" }).width;
+      return w + (plain.split(" ").length - 1) * 0.22 * 100;
+    }),
+  );
+  const size = Math.min(wanted, Math.floor((maxWidth / widest) * 100 * 0.97));
   let i = 0;
   let hotOn = false;
   return (
@@ -48,7 +59,7 @@ export const Rise: React.FC<{
       }}
     >
       {text.split("\n").map((line, li) => (
-        <div key={li} style={{ display: "block" }}>
+        <div key={li} style={{ display: "block", whiteSpace: "nowrap" }}>
           {line.split(" ").map((raw, wi) => {
             const opens = raw.startsWith("*");
             const closes = raw.endsWith("*") && (raw.length > 1 || !opens);
@@ -212,7 +223,7 @@ export const OrderCard: React.FC<{ name: string; lines: string[]; total: string;
   return (
     <div
       style={{
-        width: 880,
+        width: 810,
         borderRadius: 40,
         background: C.white,
         boxShadow: "0 40px 80px -24px rgba(20,20,20,.45)",
@@ -266,10 +277,10 @@ export const Cta: React.FC<{ line?: string; sub?: string }> = ({
           background: `linear-gradient(105deg, transparent ${sheen - 20}%, rgba(255,255,255,.22) ${sheen}%, transparent ${sheen + 20}%)`,
         }}
       />
-      <AbsoluteFill style={{ padding: `0 ${SIDE}px`, justifyContent: "center", paddingBottom: 380 }}>
+      <AbsoluteFill style={{ padding: `0 ${SIDE_R}px 0 ${SIDE}px`, justifyContent: "center", paddingBottom: 420 }}>
         <Logo variant="cream" width={260} style={{ marginBottom: 70 }} />
         <Rise text={line} size={150} color={C.cream} accent={C.ink} delay={4} />
-        <Body delay={16} color="rgba(244,241,234,.92)" size={46} style={{ marginTop: 36, maxWidth: 860 }}>
+        <Body delay={16} color="rgba(244,241,234,.92)" size={44} style={{ marginTop: 36, maxWidth: 810 }}>
           {sub}
         </Body>
         <div
