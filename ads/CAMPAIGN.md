@@ -26,7 +26,7 @@ Labels: **FACT** (known), **HYPOTHESIS** (to test), **MISSING** (not known yet, 
 
 | Ad | Creative | Why |
 |---|---|---|
-| A | R1 Cinder & Bun reel (`r1_burger`) | Product-led: shows the site working |
+| A | R8 Showcase reel (`r8_showcase`) | Product-led: four working sites in one phone, captions for sound-off |
 | B | R5 Commission reel (`r5_commission`) | Money-led: the pain owners feel |
 | C | C1 Commission carousel (`c1_commission`) | Same angle, static format |
 

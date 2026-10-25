@@ -63,6 +63,13 @@ Recommended button: **Get offer** (test against **Learn more** later).
 - **Headline:** Which one is your kitchen?
 - **Description:** Free website demo. No card, no contract.
 
+### R8 Showcase (one phone, four demos) · `utm_content=r8_showcase`
+- **On screen:** "4 restaurant websites", then each demo plays in the same phone with its name above and word-by-word captions below; ends on an order landing on WhatsApp.
+- **Primary text (short):** Four restaurant websites, one phone. Watch each one, then get a free demo of yours. No card.
+- **Primary text (medium):** Burgers that come apart as you scroll. Pizza, slice by slice. Curries with every spice. Desserts, layer by layer. Four concept demos (the restaurants are fictional), and every one sends orders straight to WhatsApp. Want one with your name and menu? Free demo within 48 hours. Pay only if you love it.
+- **Headline:** Watch 4 restaurant websites
+- **Description:** Free demo for yours. No card, no contract.
+
 ---
 
 ## Carousels (4:5, files in `out/stills/`)

@@ -1,0 +1,254 @@
+{
+ "show-0": {
+  "text": "We built four restaurant websites.",
+  "dur": 1.984,
+  "words": [
+   [
+    "We",
+    0.04,
+    0.13
+   ],
+   [
+    "built",
+    0.13,
+    0.38
+   ],
+   [
+    "four",
+    0.51,
+    0.72
+   ],
+   [
+    "restaurant",
+    0.72,
+    1.38
+   ],
+   [
+    "websites.",
+    1.38,
+    1.94
+   ]
+  ]
+ },
+ "show-1": {
+  "text": "Burgers that come apart as you scroll.",
+  "dur": 1.941,
+  "words": [
+   [
+    "Burgers",
+    0.03,
+    0.38
+   ],
+   [
+    "that",
+    0.46,
+    0.66
+   ],
+   [
+    "come",
+    0.66,
+    0.9
+   ],
+   [
+    "apart",
+    0.9,
+    1.2
+   ],
+   [
+    "as",
+    1.2,
+    1.32
+   ],
+   [
+    "you",
+    1.32,
+    1.48
+   ],
+   [
+    "scroll.",
+    1.5,
+    1.9
+   ]
+  ]
+ },
+ "show-2": {
+  "text": "Pizza, slice by slice.",
+  "dur": 1.664,
+  "words": [
+   [
+    "Pizza",
+    0.04,
+    0.48
+   ],
+   [
+    "slice",
+    0.48,
+    0.96
+   ],
+   [
+    "by",
+    0.96,
+    1.13
+   ],
+   [
+    "slice.",
+    1.15,
+    1.64
+   ]
+  ]
+ },
+ "show-3": {
+  "text": "Curries, with every spice.",
+  "dur": 1.536,
+  "words": [
+   [
+    "Curries",
+    0.09,
+    0.41
+   ],
+   [
+    "with",
+    0.41,
+    0.65
+   ],
+   [
+    "every",
+    0.65,
+    0.95
+   ],
+   [
+    "spice.",
+    0.95,
+    1.41
+   ]
+  ]
+ },
+ "show-4": {
+  "text": "Desserts, layer by layer.",
+  "dur": 1.515,
+  "words": [
+   [
+    "Desserts",
+    0.03,
+    0.54
+   ],
+   [
+    "layer",
+    0.54,
+    0.89
+   ],
+   [
+    "by",
+    0.89,
+    1.03
+   ],
+   [
+    "layer.",
+    1.03,
+    1.44
+   ]
+  ]
+ },
+ "show-5": {
+  "text": "And every order goes straight to WhatsApp.",
+  "dur": 2.091,
+  "words": [
+   [
+    "and",
+    0.05,
+    0.17
+   ],
+   [
+    "every",
+    0.17,
+    0.45
+   ],
+   [
+    "order",
+    0.45,
+    0.73
+   ],
+   [
+    "goes",
+    0.73,
+    0.95
+   ],
+   [
+    "straight",
+    0.95,
+    1.4
+   ],
+   [
+    "to",
+    1.4,
+    1.51
+   ],
+   [
+    "WhatsApp.",
+    1.51,
+    2
+   ]
+  ]
+ },
+ "show-6": {
+  "text": "Want one for your restaurant? Tap below for a free demo.",
+  "dur": 3.008,
+  "words": [
+   [
+    "Want",
+    0.04,
+    0.18
+   ],
+   [
+    "one",
+    0.22,
+    0.37
+   ],
+   [
+    "for",
+    0.37,
+    0.53
+   ],
+   [
+    "your",
+    0.53,
+    0.73
+   ],
+   [
+    "restaurant?",
+    0.73,
+    1.32
+   ],
+   [
+    "Tap",
+    1.54,
+    1.7
+   ],
+   [
+    "below",
+    1.85,
+    2.06
+   ],
+   [
+    "for",
+    2.06,
+    2.28
+   ],
+   [
+    "a",
+    2.28,
+    2.32
+   ],
+   [
+    "free",
+    2.4,
+    2.64
+   ],
+   [
+    "demo.",
+    2.64,
+    3
+   ]
+  ]
+ }
+}

@@ -6,6 +6,7 @@ import { Commission, COMMISSION_FRAMES } from "./reels/Commission";
 import { CheapSite, CHEAP_FRAMES } from "./reels/CheapSite";
 import { Compilation, COMPILATION_FRAMES } from "./reels/Compilation";
 import { STILLS } from "./stills/Stills";
+import { Showcase, SHOWCASE_FRAMES } from "./reels/Showcase";
 
 const fontHandle = delayRender("fonts");
 fontsReady.then(() => continueRender(fontHandle));
@@ -56,6 +57,7 @@ export const RemotionRoot: React.FC = () => {
           <Still key={id} id={id} component={C} width={1080} height={1350} />
         ))}
       </Folder>
+      <Composition id="R8-Showcase" component={Showcase} durationInFrames={SHOWCASE_FRAMES} fps={30} width={1080} height={1920} />
       <Composition id="R7-FourDemos" component={Compilation} durationInFrames={COMPILATION_FRAMES} fps={30} width={1080} height={1920} />
     </>
   );

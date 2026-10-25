@@ -6,7 +6,7 @@ Ads that send restaurant owners to the free demo on https://saldigital.co/lp/res
 
 | Path | What |
 |---|---|
-| `out/R1-CinderAndBun.mp4` ... `out/R7-FourDemos.mp4` | 7 reels, 1080x1920, 30fps, 15 to 19 seconds, with voiceover, music and sound effects |
+| `out/R1-CinderAndBun.mp4` ... `out/R8-Showcase.mp4` | 8 reels, 1080x1920, 30fps, 15 to 19 seconds, with voiceover, music and sound effects |
 | `out/stills/C1-*`, `C2-*`, `C3-*` | 3 carousels (6, 7 and 6 slides), 1080x1350 PNG |
 | `out/stills/S1-*` ... `S4-*` | 4 single images, 1080x1350 PNG |
 | `AD-COPY.md` | Primary text, headlines, descriptions and UTM tag for every ad, plus organic captions |
@@ -20,6 +20,7 @@ Ads that send restaurant owners to the free demo on https://saldigital.co/lp/res
 | R5 | Commission maths from the landing page example (£2,000 a week at 30%) |
 | R6 | "Nobody orders from a website that looks cheap": a generic tired site against a demo |
 | R7 | Four demos in quick cuts, then "What's yours?" |
+| R8 | Showcase: one phone in the middle of the safe area, the four demo recordings play inside it one after another, copy above, word-by-word captions below, order lands on WhatsApp |
 
 The demo restaurants are fictional and every creative says so on screen or in the copy.
 
