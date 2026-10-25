@@ -1,0 +1,215 @@
+{
+  "slug": "saffron-lane",
+  "name": "Saffron Lane",
+  "mark": [
+    "Saffron",
+    "Lane"
+  ],
+  "cuisine": "Bangladeshi and Indian kitchen",
+  "area": "Whitechapel, London E1",
+  "title": "Saffron Lane | Bangladeshi and Indian kitchen in Whitechapel, order for collection",
+  "description": "Biryani, bhuna and rezala cooked slow with whole spices. Build your order and send it on WhatsApp. Pay on collection, no app fees.",
+  "hero": {
+    "eyebrow": "Bangladeshi and Indian kitchen · Whitechapel",
+    "lines": [
+      "Slow cooked.",
+      "Home spiced."
+    ],
+    "sub": "Biryani, bhuna and rezala made the way they are made at home. Order direct and collect it fresh.",
+    "word": "Saffron",
+    "beat2": [
+      "No app fees.",
+      "Pay when you collect."
+    ],
+    "subject_alt": "A copper bowl of chicken biryani on a white plate with a gold spoon",
+    "h1": 12.5
+  },
+  "strip": [
+    "Halal kitchen",
+    "No app fees",
+    "Pay on collection",
+    "Whole spices",
+    "Open late"
+  ],
+  "steps": [
+    {
+      "t": "Pick your dishes",
+      "d": "Tap to add. Ask for mild, medium or hot in the note."
+    },
+    {
+      "t": "Send it on WhatsApp",
+      "d": "One tap and the order lands straight with the kitchen."
+    },
+    {
+      "t": "Collect fresh",
+      "d": "Walk in, pick up the bag, pay at the counter."
+    }
+  ],
+  "feature": {
+    "img": "feature",
+    "title": "Chicken Dum Biryani",
+    "text": "Long grain rice and marinated chicken sealed and cooked slow, finished with saffron, fried onion and fresh mint. Served with raita.",
+    "item": "biryani"
+  },
+  "menu": [
+    {
+      "id": "biryani",
+      "name": "Biryani",
+      "items": [
+        {
+          "id": "biryani",
+          "name": "Chicken Dum Biryani",
+          "price": 11.5,
+          "desc": "Saffron rice, marinated chicken, fried onion, raita.",
+          "tag": "Best seller"
+        },
+        {
+          "id": "lamb-biryani",
+          "name": "Lamb Biryani",
+          "price": 13.5,
+          "desc": "Slow cooked lamb on the bone, saffron rice, raita.",
+          "tag": ""
+        },
+        {
+          "id": "veg-biryani",
+          "name": "Vegetable Biryani",
+          "price": 9.5,
+          "desc": "Seasonal vegetables, saffron rice, raita.",
+          "tag": "Veg"
+        }
+      ]
+    },
+    {
+      "id": "curries",
+      "name": "Curries",
+      "items": [
+        {
+          "id": "tikka",
+          "name": "Chicken Tikka Masala",
+          "price": 10.5,
+          "desc": "Charred chicken in a creamy tomato sauce.",
+          "tag": "Popular"
+        },
+        {
+          "id": "bhuna",
+          "name": "Lamb Bhuna",
+          "price": 12.5,
+          "desc": "Thick, dark and rich with onion and whole spices.",
+          "tag": "Spicy"
+        },
+        {
+          "id": "rezala",
+          "name": "Beef Rezala",
+          "price": 12.0,
+          "desc": "Bangladeshi white curry with yoghurt, green chilli and kewra.",
+          "tag": ""
+        },
+        {
+          "id": "jalfrezi",
+          "name": "Chicken Jalfrezi",
+          "price": 10.5,
+          "desc": "Peppers, onion and fresh green chilli.",
+          "tag": "Spicy"
+        },
+        {
+          "id": "dal",
+          "name": "Tarka Dal",
+          "price": 7.0,
+          "desc": "Yellow lentils, garlic, cumin, ghee.",
+          "tag": "Veg"
+        }
+      ]
+    },
+    {
+      "id": "sides",
+      "name": "Breads and Sides",
+      "items": [
+        {
+          "id": "naan",
+          "name": "Garlic Naan",
+          "price": 3.0,
+          "desc": "Tandoor baked.",
+          "tag": ""
+        },
+        {
+          "id": "rice",
+          "name": "Pilau Rice",
+          "price": 3.5,
+          "desc": "Basmati with whole spices.",
+          "tag": ""
+        },
+        {
+          "id": "samosa",
+          "name": "Lamb Samosa (2)",
+          "price": 4.0,
+          "desc": "Crisp pastry, spiced lamb.",
+          "tag": ""
+        },
+        {
+          "id": "lassi",
+          "name": "Mango Lassi",
+          "price": 3.5,
+          "desc": "Thick and cold.",
+          "tag": ""
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "lines": [
+      "Whitechapel, London E1"
+    ],
+    "hours": [
+      [
+        "Mon to Thu",
+        "12pm to 11pm"
+      ],
+      [
+        "Fri and Sat",
+        "12pm to midnight"
+      ],
+      [
+        "Sunday",
+        "12pm to 10pm"
+      ]
+    ],
+    "note": "No alcohol served. Allergies? Tell us when you order and we will talk you through it."
+  },
+  "whatsapp": "447508407866",
+  "phone": "020 0000 0000",
+  "theme": {
+    "bg": "#0a1a1c",
+    "bg2": "#11272a",
+    "ink": "#f7efe0",
+    "muted": "#9db3b0",
+    "accent": "#f2a516",
+    "accent_ink": "#1b1202",
+    "glow": "#ff8a1f",
+    "display": "Playfair Display",
+    "body": "Outfit",
+    "case": "none",
+    "wdisplay": 800
+  },
+  "fonts": [
+    {
+      "family": "Playfair Display",
+      "weight": 800,
+      "file": "playfair-display-latin-800-normal.woff2"
+    },
+    {
+      "family": "Outfit",
+      "weight": 400,
+      "file": "outfit-latin-400-normal.woff2"
+    },
+    {
+      "family": "Outfit",
+      "weight": 600,
+      "file": "outfit-latin-600-normal.woff2"
+    },
+    {
+      "family": "Outfit",
+      "weight": 700,
+      "file": "outfit-latin-700-normal.woff2"
+    }
+  ]
+}

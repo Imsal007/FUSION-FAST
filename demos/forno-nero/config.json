@@ -1,0 +1,208 @@
+{
+  "slug": "forno-nero",
+  "name": "Forno Nero",
+  "mark": [
+    "Forno",
+    "Nero"
+  ],
+  "cuisine": "Stone-baked pizza",
+  "area": "Walthamstow, London E17",
+  "title": "Forno Nero | Stone-baked pizza in Walthamstow, order for collection",
+  "description": "Slow-proved dough, San Marzano tomato and a very hot oven. Build your order and send it on WhatsApp. Pay on collection, no app fees.",
+  "hero": {
+    "eyebrow": "Stone-baked pizza · Walthamstow",
+    "lines": [
+      "Stone baked",
+      "to order."
+    ],
+    "sub": "Slow-proved dough, sweet tomato and a very hot oven. Collect it while the crust still crackles.",
+    "word": "Forno",
+    "beat2": [
+      "Order on WhatsApp.",
+      "Collect it hot."
+    ],
+    "subject_alt": "A stone-baked margherita pizza with basil and a blistered crust",
+    "h1": 13.5
+  },
+  "strip": [
+    "Slow-proved dough",
+    "No app fees",
+    "Pay on collection",
+    "Baked to order",
+    "Open late"
+  ],
+  "steps": [
+    {
+      "t": "Choose your pizza",
+      "d": "Tap to add. Half the toppings, double the cheese, your call."
+    },
+    {
+      "t": "Send it on WhatsApp",
+      "d": "One tap and the order lands straight with the oven."
+    },
+    {
+      "t": "Collect hot",
+      "d": "Walk in, grab the box, pay at the counter."
+    }
+  ],
+  "feature": {
+    "img": "feature",
+    "title": "The Margherita",
+    "text": "Sweet tomato, fior di latte, basil and olive oil on a blistered, slow-proved crust. Simple, and the one we judge ourselves by.",
+    "item": "margherita"
+  },
+  "menu": [
+    {
+      "id": "pizza",
+      "name": "Pizza",
+      "items": [
+        {
+          "id": "margherita",
+          "name": "Margherita",
+          "price": 9.5,
+          "desc": "Tomato, fior di latte, basil, olive oil.",
+          "tag": "Classic"
+        },
+        {
+          "id": "marinara",
+          "name": "Marinara",
+          "price": 8.5,
+          "desc": "Tomato, garlic, oregano, olive oil.",
+          "tag": "Veg"
+        },
+        {
+          "id": "diavola",
+          "name": "Diavola",
+          "price": 12.5,
+          "desc": "Tomato, mozzarella, beef pepperoni, chilli oil.",
+          "tag": "Spicy"
+        },
+        {
+          "id": "funghi",
+          "name": "Funghi",
+          "price": 11.5,
+          "desc": "Mushrooms, mozzarella, thyme, truffle oil.",
+          "tag": "Veg"
+        },
+        {
+          "id": "quattro",
+          "name": "Four Cheese",
+          "price": 12.0,
+          "desc": "Mozzarella, gorgonzola, parmesan, ricotta.",
+          "tag": ""
+        }
+      ]
+    },
+    {
+      "id": "sides",
+      "name": "Sides",
+      "items": [
+        {
+          "id": "dough",
+          "name": "Garlic Dough Balls",
+          "price": 5.0,
+          "desc": "Warm, garlic butter, parsley.",
+          "tag": ""
+        },
+        {
+          "id": "salad",
+          "name": "Rocket Salad",
+          "price": 4.5,
+          "desc": "Rocket, parmesan, lemon.",
+          "tag": ""
+        },
+        {
+          "id": "wings",
+          "name": "Hot Honey Wings",
+          "price": 7.0,
+          "desc": "Crisp wings, hot honey glaze.",
+          "tag": "Spicy"
+        }
+      ]
+    },
+    {
+      "id": "sweet",
+      "name": "Sweet & Drinks",
+      "items": [
+        {
+          "id": "tiramisu",
+          "name": "Tiramisu",
+          "price": 5.5,
+          "desc": "Mascarpone, espresso, cocoa.",
+          "tag": ""
+        },
+        {
+          "id": "lemonade",
+          "name": "Italian Lemonade",
+          "price": 3.0,
+          "desc": "Sharp and fizzy.",
+          "tag": ""
+        },
+        {
+          "id": "can",
+          "name": "Soft Drink Can",
+          "price": 1.5,
+          "desc": "",
+          "tag": ""
+        }
+      ]
+    }
+  ],
+  "visit": {
+    "lines": [
+      "Walthamstow, London E17"
+    ],
+    "hours": [
+      [
+        "Mon to Thu",
+        "4pm to 11pm"
+      ],
+      [
+        "Fri and Sat",
+        "12pm to midnight"
+      ],
+      [
+        "Sunday",
+        "12pm to 10pm"
+      ]
+    ],
+    "note": "No alcohol served. Allergies? Tell us when you order and we will talk you through it."
+  },
+  "whatsapp": "447508407866",
+  "phone": "020 0000 0000",
+  "theme": {
+    "bg": "#f4ecdc",
+    "bg2": "#ebdfc6",
+    "ink": "#1d1510",
+    "muted": "#6b5d4d",
+    "accent": "#d6301c",
+    "accent_ink": "#fff7ec",
+    "glow": "#ffb25c",
+    "display": "DM Serif Display",
+    "body": "DM Sans",
+    "case": "none",
+    "shadow": "rgba(60,30,10,.35)"
+  },
+  "fonts": [
+    {
+      "family": "DM Serif Display",
+      "weight": 400,
+      "file": "dm-serif-display-latin-400-normal.woff2"
+    },
+    {
+      "family": "DM Sans",
+      "weight": 400,
+      "file": "dm-sans-latin-400-normal.woff2"
+    },
+    {
+      "family": "DM Sans",
+      "weight": 700,
+      "file": "dm-sans-latin-700-normal.woff2"
+    },
+    {
+      "family": "DM Sans",
+      "weight": 800,
+      "file": "dm-sans-latin-800-normal.woff2"
+    }
+  ]
+}

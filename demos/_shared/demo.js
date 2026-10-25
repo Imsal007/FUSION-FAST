@@ -121,8 +121,8 @@
       .to(".word", { yPercent: -26 }, 0)
       .to(".subject", { scale: 1.16, yPercent: -3, rotation: -4, transformOrigin: "50% 85%" }, 0)
       .to(".fx", { yPercent: -8 }, 0)
-      .to([".hero-top", ".sub"], { yPercent: -30, opacity: 0, duration: 0.22 }, 0.34)
-      .fromTo(".beat2", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.22 }, 0.5)
+      .to([".hero-top", ".sub"], { yPercent: -30, opacity: 0, duration: 0.18 }, 0.28)
+      .fromTo(".beat2", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.2 }, 0.52)
       .to(".beat2", { opacity: 0, y: -20, duration: 0.14 }, 0.88);
 
     if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {

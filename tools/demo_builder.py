@@ -24,6 +24,12 @@ def build(slug):
     h = c["hero"]
     lp_link = f"{LP}?utm_source=demo-site&utm_medium=cta&utm_campaign={slug}#demo"
 
+    try:
+        from PIL import Image
+        with Image.open(os.path.join(d, "img", "subject.webp")) as im:
+            aspect = round(im.width / im.height, 3)
+    except Exception:
+        aspect = 1.2
     faces = "".join(
         f'@font-face{{font-family:"{f["family"]}";src:url(fonts/{f["file"]}) format("woff2");font-weight:{f["weight"]};font-display:swap}}'
         for f in c["fonts"]
@@ -31,6 +37,7 @@ def build(slug):
     root_vars = (
         f':root{{--bg:{t["bg"]};--bg2:{t["bg2"]};--ink:{t["ink"]};--muted:{t["muted"]};'
         f'--accent:{t["accent"]};--accent-ink:{t["accent_ink"]};--glow:{t["glow"]};'
+        f'--aspect:{aspect};--h1m:{h.get("h1", 16.5)};--w-display:{t.get("wdisplay", 400)};--case:{t.get("case", "uppercase")};--shadow:{t.get("shadow", "rgba(0,0,0,.55)")};'
         f'--f-display:"{t["display"]}",Impact,sans-serif;--f-body:"{t["body"]}",system-ui,sans-serif}}'
     )
 

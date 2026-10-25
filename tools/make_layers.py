@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Cuts a food photo into hero layers for a demo page.
-  python3 tools/make_layers.py <slug> <photo.jpg> [--crop-pad 0.04]
+  python3 tools/make_layers.py <slug> <photo.jpg> [--tint "#0c0a08" --alpha 0.45 --dim 0.6]
 Writes demos/<slug>/img/subject.webp, subject-m.webp (alpha cutout) and plate.webp (blurred, darkened backdrop).
 Needs:  pip install rembg onnxruntime pillow  (first run downloads the u2net model)."""
 import os, sys
@@ -12,6 +12,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def main():
     slug, src = sys.argv[1], sys.argv[2]
+    args = sys.argv[3:]
+    opt = lambda k, d: type(d)(args[args.index(k) + 1]) if k in args else d
+    tint, alpha, dim = opt("--tint", "#0c0a08"), opt("--alpha", 0.45), opt("--dim", 0.6)
     pad = 0.04
     out = os.path.join(ROOT, "demos", slug, "img")
     os.makedirs(out, exist_ok=True)
@@ -26,7 +29,8 @@ def main():
         c.save(os.path.join(out, name), "WEBP", quality=82, method=6, exact=True)
         print(name, c.size)
     plate = im.resize((1200, int(im.height * 1200 / im.width)), Image.LANCZOS).filter(ImageFilter.GaussianBlur(28))
-    plate = ImageEnhance.Brightness(plate).enhance(0.55)
+    plate = ImageEnhance.Brightness(plate).enhance(dim)
+    plate = Image.blend(plate, Image.new("RGB", plate.size, tint), alpha)
     plate.save(os.path.join(out, "plate.webp"), "WEBP", quality=70, method=6)
     print("plate.webp", plate.size)
 
