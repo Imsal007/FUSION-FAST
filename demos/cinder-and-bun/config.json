@@ -10,7 +10,9 @@
     "eyebrow": "Halal smash burgers · Peckham",
     "lines": ["Smashed", "to order."],
     "sub": "Beef pressed onto a screaming hot grill until the edges go lacy and dark. Cheese, pickles, brioche. Ready in ten minutes.",
-    "img": "hero"
+    "word": "Cinder",
+    "beat2": ["Pay when you collect.", "No app fees."],
+    "subject_alt": "A double smash burger with melted cheese, pickles and burnt-onion mayo"
   },
   "strip": ["Halal beef", "No app fees", "Pay on collection", "Smashed to order", "Open late"],
   "steps": [
@@ -18,7 +20,7 @@
     {"t": "Send it on WhatsApp", "d": "One tap and your order lands straight with the kitchen."},
     {"t": "Collect in ten", "d": "Walk in, grab the bag, pay at the counter."}
   ],
-  "feature": {"img": "feature", "kicker": "The one to try", "title": "The Cinder Double", "text": "Two smashed patties, two slices of melted cheese, pickles and burnt-onion mayo on a toasted brioche bun.", "item": "double"},
+  "feature": {"img": "feature", "title": "The Cinder Double", "text": "Two smashed patties, two slices of melted cheese, pickles and burnt-onion mayo on a toasted brioche bun.", "item": "double"},
   "menu": [
     {"id": "burgers", "name": "Burgers", "items": [
       {"id": "single", "name": "The Cinder Single", "price": 8.50, "desc": "Smashed patty, American cheese, pickles, burnt-onion mayo, brioche.", "tag": "Popular"},

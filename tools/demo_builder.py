@@ -73,7 +73,8 @@ def build(slug):
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="{t["bg"]}">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
-<link rel="preload" as="image" href="img/{h["img"]}-m.webp" type="image/webp" media="(max-width:760px)">
+<link rel="preload" as="image" href="img/subject-m.webp" type="image/webp" media="(max-width:760px)">
+<link rel="preload" as="image" href="img/subject.webp" type="image/webp" media="(min-width:761px)">
 <link rel="preload" as="font" href="fonts/{c["fonts"][0]["file"]}" type="font/woff2" crossorigin>
 <style>{faces}{root_vars}</style>
 <link rel="stylesheet" href="../_shared/demo.css">
@@ -86,16 +87,26 @@ def build(slug):
 </header>
 
 <main id="top">
-<section class="hero">
-  <picture class="hero-bg"><source media="(max-width:760px)" srcset="img/{h["img"]}-m.webp"><img src="img/{h["img"]}.webp" alt="" fetchpriority="high"></picture>
-  <div class="hero-glow" aria-hidden="true"></div>
-  <div class="hero-copy">
-    <p class="eyebrow">{e(h["eyebrow"])}</p>
-    <h1 class="display">{hero_lines}</h1>
-    <p class="sub">{e(h["sub"])}</p>
-    <div class="cta-row">
-      <button class="btn btn-main" data-open>Order on WhatsApp</button>
-      <a class="btn btn-ghost" href="#menu">See the menu</a>
+<section class="hero" id="hero">
+  <div class="hero-pin">
+    <div class="layer plate" aria-hidden="true"><img src="img/plate.webp" alt=""></div>
+    <div class="layer light" aria-hidden="true"></div>
+    <div class="layer word" aria-hidden="true"><span>{e(h["word"])}</span></div>
+    <div class="layer subject"><picture><source media="(max-width:760px)" srcset="img/subject-m.webp"><img src="img/subject.webp" alt="{e(h["subject_alt"])}" fetchpriority="high"></picture></div>
+    <canvas class="layer fx" aria-hidden="true"></canvas>
+    <div class="hero-copy">
+      <div class="hero-top">
+        <p class="eyebrow">{e(h["eyebrow"])}</p>
+        <h1 class="display">{hero_lines}</h1>
+      </div>
+      <div class="hero-bottom">
+        <p class="sub">{e(h["sub"])}</p>
+        <p class="beat2 display" aria-hidden="true">{"<br>".join(e(x) for x in h["beat2"])}</p>
+        <div class="cta-row">
+          <button class="btn btn-main" data-open>Order on WhatsApp</button>
+          <a class="btn btn-ghost" href="#menu">See the menu</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -110,7 +121,6 @@ def build(slug):
 <section class="feature">
   <picture><source media="(max-width:760px)" srcset="img/{f["img"]}-m.webp"><img src="img/{f["img"]}.webp" alt="{e(f["title"])}" loading="lazy"></picture>
   <div class="feature-copy">
-    <p class="eyebrow">{e(f["kicker"])}</p>
     <h2 class="display h2">{e(f["title"])}</h2>
     <p>{e(f["text"])}</p>
     <button class="btn btn-main" data-add="{f["item"]}">Add to my order</button>
@@ -153,6 +163,8 @@ def build(slug):
 
 <script type="application/json" id="cfg">{menu_json}</script>
 <script src="../_shared/gsap.min.js"></script>
+<script src="../_shared/ScrollTrigger.min.js"></script>
+<script src="../_shared/lenis.min.js"></script>
 <script src="../_shared/demo.js"></script>
 </body>
 </html>
