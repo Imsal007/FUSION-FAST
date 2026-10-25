@@ -90,6 +90,12 @@ Recommended button: **Get offer** (test against **Learn more** later).
 | S2-FornoNero.png | s2_pizza | Your pizza deserves a website this good. Free demo with your name and menu. Concept shown is fictional. | Free demo for your pizzeria |
 | S3-SaffronLane.png | s3_curry | Your curries deserve a website this good. Free demo with your name and menu. Concept shown is fictional. | Free demo for your curry house |
 | S4-SugarSteam.png | s4_dessert | Your desserts deserve a website this good. Free demo with your name and menu. Concept shown is fictional. | Free demo for your dessert shop |
+| S5-Dark-CinderBun.png | s5_burger_dark | Same copy as S1 (dark, cinematic version) | Free demo for your burger shop |
+| S6-Dark-FornoNero.png | s6_pizza_dark | Same copy as S2 (dark version) | Free demo for your pizzeria |
+| S7-Dark-SaffronLane.png | s7_curry_dark | Same copy as S3 (dark version) | Free demo for your curry house |
+| S8-Dark-SugarSteam.png | s8_dessert_dark | Same copy as S4 (dark version) | Free demo for your dessert shop |
+
+Test one cream (S1 to S4) against its dark twin (S5 to S8): it tells you which look your audience stops for.
 
 ---
 

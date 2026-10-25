@@ -1,3 +1,7 @@
+import { AbsoluteFill as AF } from "remotion";
+import { FloatFood, Finish, Phone3D, Stage } from "../premium";
+import { Img as RImg, staticFile as sf } from "remotion";
+import { Logo } from "../ui";
 import React from "react";
 import { C, DEMOS, FONT } from "../theme";
 import { OrderCard } from "../ui";
@@ -205,3 +209,39 @@ export const STILLS: { id: string; C: React.FC }[] = [
   ...C3.map((C, i) => ({ id: `C3-FourDemos-${i + 1}`, C })),
   ...SLUGS.map((slug, i) => ({ id: `S${i + 1}-${DEMOS[slug].name.replace(/[^A-Za-z]/g, "")}`, C: () => <Single slug={slug} /> })),
 ];
+
+/* ---------- Premium dark single images (same look as the reels) ---------- */
+
+const DarkSingle: React.FC<{ slug: string }> = ({ slug }) => {
+  const d = DEMOS[slug];
+  return (
+      <AF style={{ background: "#0d0b0a" }}>
+        <Stage accent={d.accent} plate={slug} plateOpacity={0.55} />
+        <FloatFood slug={slug} x={-30} y={960} w={slug === "saffron-lane" || slug === "sugar-and-steam" ? 290 : 420} depth={0.5} rot={-8} delay={-70} />
+        <div style={{ position: "absolute", right: 30, top: 300 }}>
+          <Phone3D width={430} from={-24} to={-12} tilt={6} delay={-70}>
+            <RImg src={sf(`shots/${slug}-peak.jpg`)} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+          </Phone3D>
+        </div>
+        <div style={{ position: "absolute", top: 64, left: 84 }}>
+          <Logo variant="cream" width={170} />
+        </div>
+        <div style={{ position: "absolute", top: 200, left: 84, width: 560 }}>
+          <H text={HOOK[slug]} size={112} color={C.cream} accent={d.accent} />
+          <P size={38} color="rgba(244,241,234,.8)" style={{ marginTop: 24, maxWidth: 470 }}>
+            A website with your menu, motion and WhatsApp ordering. Free demo in 48 hours.
+          </P>
+          <div style={{ marginTop: 34 }}>
+            <Tag bg={C.red} size={38}>Get your free demo</Tag>
+          </div>
+        </div>
+        <div style={{ position: "absolute", bottom: 50, right: 70, textAlign: "right", fontFamily: FONT, fontWeight: 600, fontSize: 26, lineHeight: 1.5, color: "rgba(244,241,234,.6)" }}>
+          <div>Concept demo. {d.name} is fictional.</div>
+          <div style={{ color: C.cream, fontSize: 30 }}>saldigital.co</div>
+        </div>
+        <Finish grain={0.07} />
+      </AF>
+  );
+};
+
+STILLS.push(...SLUGS.map((slug, i) => ({ id: `S${i + 5}-Dark-${DEMOS[slug].name.replace(/[^A-Za-z]/g, "")}`, C: () => <DarkSingle slug={slug} /> })));
